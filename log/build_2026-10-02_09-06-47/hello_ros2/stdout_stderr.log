@@ -1,0 +1,20 @@
+[35m[1mConsolidate compiler generated dependencies of target hello_node[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/hello_node.dir/src/hello_node.cpp.o[0m
+[100%] [32m[1mLinking CXX executable hello_node[0m
+[100%] Built target hello_node
+-- Install configuration: ""
+-- Installing: /home/glance/ros2_ws/install/hello_ros2/share/ament_index/resource_index/package_run_dependencies/hello_ros2
+-- Installing: /home/glance/ros2_ws/install/hello_ros2/share/ament_index/resource_index/parent_prefix_path/hello_ros2
+-- Installing: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/environment/ament_prefix_path.sh
+-- Installing: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/environment/ament_prefix_path.dsv
+-- Installing: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/environment/path.sh
+-- Installing: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/environment/path.dsv
+-- Installing: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/local_setup.bash
+-- Installing: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/local_setup.sh
+-- Installing: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/local_setup.zsh
+-- Installing: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/local_setup.dsv
+-- Installing: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/package.dsv
+-- Installing: /home/glance/ros2_ws/install/hello_ros2/share/ament_index/resource_index/packages/hello_ros2
+-- Installing: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/cmake/hello_ros2Config.cmake
+-- Installing: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/cmake/hello_ros2Config-version.cmake
+-- Installing: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/package.xml

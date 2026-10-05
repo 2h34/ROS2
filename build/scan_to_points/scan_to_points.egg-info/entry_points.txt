@@ -1,0 +1,3 @@
+[console_scripts]
+scan_converter = scan_to_points.scan_converter:main
+

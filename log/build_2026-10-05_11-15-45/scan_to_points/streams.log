@@ -1,0 +1,24 @@
+[0.387s] Invoking command in '/home/glance/ros2_ws/src/scan_to_points': PYTHONPATH=/home/glance/ros2_ws/build/scan_to_points/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/glance/ros2_ws/install/scan_to_points/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/scan_to_points build --build-base /home/glance/ros2_ws/build/scan_to_points/build install --record /home/glance/ros2_ws/build/scan_to_points/install.log --install-scripts $base/lib/scan_to_points --single-version-externally-managed install_data
+[0.506s] running egg_info
+[0.506s] writing ../../build/scan_to_points/scan_to_points.egg-info/PKG-INFO
+[0.506s] writing dependency_links to ../../build/scan_to_points/scan_to_points.egg-info/dependency_links.txt
+[0.506s] writing entry points to ../../build/scan_to_points/scan_to_points.egg-info/entry_points.txt
+[0.506s] writing requirements to ../../build/scan_to_points/scan_to_points.egg-info/requires.txt
+[0.506s] writing top-level names to ../../build/scan_to_points/scan_to_points.egg-info/top_level.txt
+[0.507s] reading manifest file '../../build/scan_to_points/scan_to_points.egg-info/SOURCES.txt'
+[0.508s] writing manifest file '../../build/scan_to_points/scan_to_points.egg-info/SOURCES.txt'
+[0.508s] running build
+[0.508s] running build_py
+[0.508s] copying scan_to_points/scan_converter.py -> /home/glance/ros2_ws/build/scan_to_points/build/lib/scan_to_points
+[0.508s] running install
+[0.508s] running install_lib
+[0.508s] copying /home/glance/ros2_ws/build/scan_to_points/build/lib/scan_to_points/scan_converter.py -> /home/glance/ros2_ws/install/scan_to_points/lib/python3.10/site-packages/scan_to_points
+[0.509s] byte-compiling /home/glance/ros2_ws/install/scan_to_points/lib/python3.10/site-packages/scan_to_points/scan_converter.py to scan_converter.cpython-310.pyc
+[0.509s] running install_data
+[0.509s] running install_egg_info
+[0.510s] removing '/home/glance/ros2_ws/install/scan_to_points/lib/python3.10/site-packages/scan_to_points-0.0.0-py3.10.egg-info' (and everything under it)
+[0.511s] Copying ../../build/scan_to_points/scan_to_points.egg-info to /home/glance/ros2_ws/install/scan_to_points/lib/python3.10/site-packages/scan_to_points-0.0.0-py3.10.egg-info
+[0.511s] running install_scripts
+[0.525s] Installing scan_converter script to /home/glance/ros2_ws/install/scan_to_points/lib/scan_to_points
+[0.525s] writing list of installed files to '/home/glance/ros2_ws/build/scan_to_points/install.log'
+[0.545s] Invoked command in '/home/glance/ros2_ws/src/scan_to_points' returned '0': PYTHONPATH=/home/glance/ros2_ws/build/scan_to_points/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/glance/ros2_ws/install/scan_to_points/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/scan_to_points build --build-base /home/glance/ros2_ws/build/scan_to_points/build install --record /home/glance/ros2_ws/build/scan_to_points/install.log --install-scripts $base/lib/scan_to_points --single-version-externally-managed install_data

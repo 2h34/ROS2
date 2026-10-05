@@ -1,0 +1,6 @@
+fake_lidar: #node name
+  ros__parameters: # Parameters for the fake lidar node 两个下划线
+    frame_id: front_laser
+    publish_rate_hz: 5.0
+    range_min: 0.2
+    range_max: 8.0

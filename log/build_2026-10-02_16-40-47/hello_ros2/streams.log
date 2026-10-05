@@ -1,0 +1,33 @@
+[0.010s] Invoking command in '/home/glance/ros2_ws/build/hello_ros2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/glance/ros2_ws/build/hello_ros2 -- -j20 -l20
+[0.063s] [35m[1mConsolidate compiler generated dependencies of target string_subscriber[0m
+[0.072s] [ 16%] [32mBuilding CXX object CMakeFiles/string_publisher.dir/src/string_publisher.cpp.o[0m
+[0.072s] [ 50%] Built target hello_node
+[0.072s] [ 66%] [32mBuilding CXX object CMakeFiles/string_subscriber.dir/src/string_subscriber.cpp.o[0m
+[2.635s] [ 83%] [32m[1mLinking CXX executable string_publisher[0m
+[2.877s] [ 83%] Built target string_publisher
+[4.820s] [100%] [32m[1mLinking CXX executable string_subscriber[0m
+[5.048s] [100%] Built target string_subscriber
+[5.056s] Invoked command in '/home/glance/ros2_ws/build/hello_ros2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/glance/ros2_ws/build/hello_ros2 -- -j20 -l20
+[5.063s] Invoking command in '/home/glance/ros2_ws/build/hello_ros2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/glance/ros2_ws/build/hello_ros2
+[5.067s] -- Install configuration: ""
+[5.068s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/ament_index/resource_index/package_run_dependencies/hello_ros2
+[5.068s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/ament_index/resource_index/parent_prefix_path/hello_ros2
+[5.068s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/environment/ament_prefix_path.sh
+[5.068s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/environment/ament_prefix_path.dsv
+[5.068s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/environment/path.sh
+[5.068s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/environment/path.dsv
+[5.068s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/local_setup.bash
+[5.068s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/local_setup.sh
+[5.068s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/local_setup.zsh
+[5.068s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/local_setup.dsv
+[5.068s] -- Installing: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/package.dsv
+[5.068s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/ament_index/resource_index/packages/hello_ros2
+[5.068s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/cmake/hello_ros2Config.cmake
+[5.068s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/cmake/hello_ros2Config-version.cmake
+[5.068s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/package.xml
+[5.069s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/lib/hello_ros2/hello_node
+[5.069s] -- Installing: /home/glance/ros2_ws/install/hello_ros2/lib/hello_ros2/string_publisher
+[5.071s] -- Set runtime path of "/home/glance/ros2_ws/install/hello_ros2/lib/hello_ros2/string_publisher" to ""
+[5.071s] -- Installing: /home/glance/ros2_ws/install/hello_ros2/lib/hello_ros2/string_subscriber
+[5.074s] -- Set runtime path of "/home/glance/ros2_ws/install/hello_ros2/lib/hello_ros2/string_subscriber" to ""
+[5.075s] Invoked command in '/home/glance/ros2_ws/build/hello_ros2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/glance/ros2_ws/build/hello_ros2

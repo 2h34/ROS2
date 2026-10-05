@@ -1,0 +1,140 @@
+[0.000000] (-) TimerEvent: {}
+[0.000149] (hello_ros2) JobQueued: {'identifier': 'hello_ros2', 'dependencies': OrderedDict()}
+[0.000172] (hello_ros2) JobStarted: {'identifier': 'hello_ros2'}
+[0.006894] (hello_ros2) JobProgress: {'identifier': 'hello_ros2', 'progress': 'cmake'}
+[0.007589] (hello_ros2) JobProgress: {'identifier': 'hello_ros2', 'progress': 'build'}
+[0.008063] (hello_ros2) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/glance/ros2_ws/build/hello_ros2', '--', '-j20', '-l20'], 'cwd': '/home/glance/ros2_ws/build/hello_ros2', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'glance'), ('GIT_ASKPASS', '/home/glance/.vscode-server/bin/07f806f999227108933c2e30515b26eecc1fda74/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'update-motd'), ('HOME', '/home/glance'), ('OLDPWD', '/home/glance'), ('TERM_PROGRAM_VERSION', '1.140.0'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-4a8ba1d5-4777-4eea-ade9-9e01011e10aa.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/glance/.vscode-server/bin/07f806f999227108933c2e30515b26eecc1fda74/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/glance/.vscode-server/bin/07f806f999227108933c2e30515b26eecc1fda74/node'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'glance'), ('NAME', 'LAPTOP-DBED9HEM'), ('WSL_INTEROP', '/run/WSL/392_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('CLAUDE_CODE_SSE_PORT', '16236'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/glance/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/glance/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/glance/.vscode-server/bin/07f806f999227108933c2e30515b26eecc1fda74/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Windows/system32:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Bandizip/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/:/mnt/d/Program Files/MATLAB/R2022b/runtime/win64:/mnt/d/Program Files/MATLAB/R2022b/bin:/mnt/d/Git/cmd:/mnt/d/w64devkit/bin:/mnt/c/Program Files/GitHub CLI/:/mnt/c/Program Files/nodejs/:/mnt/c/Users/glance/AppData/Local/Programs/Python/Python312:/mnt/c/Users/glance/AppData/Local/Programs/Python/Python312/Scripts:/mnt/c/Users/glance/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/glance/.local/bin:/mnt/c/Users/glance/AppData/Local/Microsoft/WindowsApps:/mnt/d/Microsoft VS Code/bin:/mnt/c/Users/glance/AppData/Roaming/npm:/mnt/c/Users/glance/AppData/Local/Programs/DockerDesktop/resources/bin:/mnt/c/Users/glance/AppData/Local/Programs/Antigravity IDE/bin:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-5cd6a46eea.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/glance/ros2_ws/build/hello_ros2'), ('COPILOT_DEBUG_NONCE', '24c56f5384243b67a53f1fc10e04bab8'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('WSLENV', 'VSCODE_WSL_EXT_LOCATION/up'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.053276] (hello_ros2) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.099470] (-) TimerEvent: {}
+[0.136565] (hello_ros2) StdoutLine: {'line': b'-- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[0.199591] (-) TimerEvent: {}
+[0.236771] (hello_ros2) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.239462] (hello_ros2) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.245620] (hello_ros2) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.253559] (hello_ros2) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.262320] (hello_ros2) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.287649] (hello_ros2) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.3 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[0.289090] (hello_ros2) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[0.299664] (-) TimerEvent: {}
+[0.399927] (-) TimerEvent: {}
+[0.500225] (-) TimerEvent: {}
+[0.600544] (-) TimerEvent: {}
+[0.700843] (-) TimerEvent: {}
+[0.801144] (-) TimerEvent: {}
+[0.901443] (-) TimerEvent: {}
+[1.001758] (-) TimerEvent: {}
+[1.102062] (-) TimerEvent: {}
+[1.202421] (-) TimerEvent: {}
+[1.302793] (-) TimerEvent: {}
+[1.403122] (-) TimerEvent: {}
+[1.503430] (-) TimerEvent: {}
+[1.603742] (-) TimerEvent: {}
+[1.704064] (-) TimerEvent: {}
+[1.804354] (-) TimerEvent: {}
+[1.904641] (-) TimerEvent: {}
+[2.004934] (-) TimerEvent: {}
+[2.105259] (-) TimerEvent: {}
+[2.205668] (-) TimerEvent: {}
+[2.306068] (-) TimerEvent: {}
+[2.406377] (-) TimerEvent: {}
+[2.506682] (-) TimerEvent: {}
+[2.606991] (-) TimerEvent: {}
+[2.707292] (-) TimerEvent: {}
+[2.807652] (-) TimerEvent: {}
+[2.908115] (-) TimerEvent: {}
+[3.008559] (-) TimerEvent: {}
+[3.108936] (-) TimerEvent: {}
+[3.167353] (hello_ros2) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[3.209090] (-) TimerEvent: {}
+[3.212767] (hello_ros2) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[3.258137] (hello_ros2) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[3.258288] (hello_ros2) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[3.258421] (hello_ros2) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[3.258780] (hello_ros2) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[3.259636] (hello_ros2) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[3.259696] (hello_ros2) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[3.260024] (hello_ros2) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[3.262272] (hello_ros2) StdoutLine: {'line': b'-- Configuring done\n'}
+[3.273905] (hello_ros2) StdoutLine: {'line': b'-- Generating done\n'}
+[3.277031] (hello_ros2) StdoutLine: {'line': b'-- Build files have been written to: /home/glance/ros2_ws/build/hello_ros2\n'}
+[3.291818] (hello_ros2) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target string_publisher\x1b[0m\n'}
+[3.291935] (hello_ros2) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target hello_node\x1b[0m\n'}
+[3.296441] (hello_ros2) StdoutLine: {'line': b'[ 16%] \x1b[32mBuilding CXX object CMakeFiles/string_subscriber.dir/src/string_subscriber.cpp.o\x1b[0m\n'}
+[3.299631] (hello_ros2) StdoutLine: {'line': b'[ 66%] Built target hello_node\n'}
+[3.299727] (hello_ros2) StdoutLine: {'line': b'[ 83%] Built target string_publisher\n'}
+[3.309203] (-) TimerEvent: {}
+[3.409464] (-) TimerEvent: {}
+[3.509763] (-) TimerEvent: {}
+[3.610074] (-) TimerEvent: {}
+[3.710419] (-) TimerEvent: {}
+[3.810748] (-) TimerEvent: {}
+[3.911068] (-) TimerEvent: {}
+[4.011372] (-) TimerEvent: {}
+[4.111682] (-) TimerEvent: {}
+[4.211999] (-) TimerEvent: {}
+[4.312350] (-) TimerEvent: {}
+[4.412696] (-) TimerEvent: {}
+[4.513004] (-) TimerEvent: {}
+[4.613323] (-) TimerEvent: {}
+[4.713671] (-) TimerEvent: {}
+[4.814044] (-) TimerEvent: {}
+[4.914456] (-) TimerEvent: {}
+[5.014785] (-) TimerEvent: {}
+[5.115093] (-) TimerEvent: {}
+[5.215411] (-) TimerEvent: {}
+[5.315736] (-) TimerEvent: {}
+[5.416077] (-) TimerEvent: {}
+[5.516397] (-) TimerEvent: {}
+[5.616731] (-) TimerEvent: {}
+[5.717075] (-) TimerEvent: {}
+[5.817420] (-) TimerEvent: {}
+[5.917761] (-) TimerEvent: {}
+[6.018105] (-) TimerEvent: {}
+[6.118459] (-) TimerEvent: {}
+[6.218783] (-) TimerEvent: {}
+[6.319094] (-) TimerEvent: {}
+[6.419407] (-) TimerEvent: {}
+[6.519741] (-) TimerEvent: {}
+[6.620066] (-) TimerEvent: {}
+[6.720431] (-) TimerEvent: {}
+[6.820743] (-) TimerEvent: {}
+[6.921105] (-) TimerEvent: {}
+[7.021475] (-) TimerEvent: {}
+[7.121797] (-) TimerEvent: {}
+[7.222115] (-) TimerEvent: {}
+[7.322399] (-) TimerEvent: {}
+[7.422701] (-) TimerEvent: {}
+[7.523021] (-) TimerEvent: {}
+[7.623337] (-) TimerEvent: {}
+[7.723684] (-) TimerEvent: {}
+[7.809950] (hello_ros2) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable string_subscriber\x1b[0m\n'}
+[7.823805] (-) TimerEvent: {}
+[7.924140] (-) TimerEvent: {}
+[8.024498] (-) TimerEvent: {}
+[8.065973] (hello_ros2) StdoutLine: {'line': b'[100%] Built target string_subscriber\n'}
+[8.071173] (hello_ros2) CommandEnded: {'returncode': 0}
+[8.071580] (hello_ros2) JobProgress: {'identifier': 'hello_ros2', 'progress': 'install'}
+[8.076048] (hello_ros2) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/glance/ros2_ws/build/hello_ros2'], 'cwd': '/home/glance/ros2_ws/build/hello_ros2', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'glance'), ('GIT_ASKPASS', '/home/glance/.vscode-server/bin/07f806f999227108933c2e30515b26eecc1fda74/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'update-motd'), ('HOME', '/home/glance'), ('OLDPWD', '/home/glance'), ('TERM_PROGRAM_VERSION', '1.140.0'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-4a8ba1d5-4777-4eea-ade9-9e01011e10aa.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/glance/.vscode-server/bin/07f806f999227108933c2e30515b26eecc1fda74/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/glance/.vscode-server/bin/07f806f999227108933c2e30515b26eecc1fda74/node'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'glance'), ('NAME', 'LAPTOP-DBED9HEM'), ('WSL_INTEROP', '/run/WSL/392_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('CLAUDE_CODE_SSE_PORT', '16236'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/glance/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/glance/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/glance/.vscode-server/bin/07f806f999227108933c2e30515b26eecc1fda74/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Windows/system32:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Bandizip/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/:/mnt/d/Program Files/MATLAB/R2022b/runtime/win64:/mnt/d/Program Files/MATLAB/R2022b/bin:/mnt/d/Git/cmd:/mnt/d/w64devkit/bin:/mnt/c/Program Files/GitHub CLI/:/mnt/c/Program Files/nodejs/:/mnt/c/Users/glance/AppData/Local/Programs/Python/Python312:/mnt/c/Users/glance/AppData/Local/Programs/Python/Python312/Scripts:/mnt/c/Users/glance/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/glance/.local/bin:/mnt/c/Users/glance/AppData/Local/Microsoft/WindowsApps:/mnt/d/Microsoft VS Code/bin:/mnt/c/Users/glance/AppData/Roaming/npm:/mnt/c/Users/glance/AppData/Local/Programs/DockerDesktop/resources/bin:/mnt/c/Users/glance/AppData/Local/Programs/Antigravity IDE/bin:/snap/bin'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('LANG', 'C.UTF-8'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-5cd6a46eea.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/glance/ros2_ws/build/hello_ros2'), ('COPILOT_DEBUG_NONCE', '24c56f5384243b67a53f1fc10e04bab8'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('WSLENV', 'VSCODE_WSL_EXT_LOCATION/up'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[8.079246] (hello_ros2) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[8.079337] (hello_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/ament_index/resource_index/package_run_dependencies/hello_ros2\n'}
+[8.079367] (hello_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/ament_index/resource_index/parent_prefix_path/hello_ros2\n'}
+[8.079391] (hello_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/environment/ament_prefix_path.sh\n'}
+[8.079414] (hello_ros2) StdoutLine: {'line': b'-- Installing: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/environment/ament_prefix_path.dsv\n'}
+[8.079556] (hello_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/environment/path.sh\n'}
+[8.079594] (hello_ros2) StdoutLine: {'line': b'-- Installing: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/environment/path.dsv\n'}
+[8.079645] (hello_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/local_setup.bash\n'}
+[8.079678] (hello_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/local_setup.sh\n'}
+[8.079784] (hello_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/local_setup.zsh\n'}
+[8.079835] (hello_ros2) StdoutLine: {'line': b'-- Installing: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/local_setup.dsv\n'}
+[8.079916] (hello_ros2) StdoutLine: {'line': b'-- Installing: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/package.dsv\n'}
+[8.080078] (hello_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/ament_index/resource_index/packages/hello_ros2\n'}
+[8.080136] (hello_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/cmake/hello_ros2Config.cmake\n'}
+[8.080194] (hello_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/cmake/hello_ros2Config-version.cmake\n'}
+[8.080247] (hello_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/package.xml\n'}
+[8.080580] (hello_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/lib/hello_ros2/hello_node\n'}
+[8.080965] (hello_ros2) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/lib/hello_ros2/string_publisher\n'}
+[8.081140] (hello_ros2) StdoutLine: {'line': b'-- Installing: /home/glance/ros2_ws/install/hello_ros2/lib/hello_ros2/string_subscriber\n'}
+[8.082644] (hello_ros2) StdoutLine: {'line': b'-- Set runtime path of "/home/glance/ros2_ws/install/hello_ros2/lib/hello_ros2/string_subscriber" to ""\n'}
+[8.083704] (hello_ros2) CommandEnded: {'returncode': 0}
+[8.094972] (hello_ros2) JobEnded: {'identifier': 'hello_ros2', 'rc': 0}
+[8.095367] (-) EventReactorShutdown: {}

@@ -1,0 +1,34 @@
+[0.009s] Invoking command in '/home/glance/ros2_ws/build/hello_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/glance/ros2_ws/build/hello_ros2 -- -j20 -l20
+[0.070s] [35m[1mConsolidate compiler generated dependencies of target scan_subscriber[0m
+[0.078s] [ 20%] [32mBuilding CXX object CMakeFiles/fake_lidar_node.dir/src/fake_lidar_node.cpp.o[0m
+[0.078s] [ 30%] Built target string_subscriber
+[0.078s] [ 50%] Built target hello_node
+[0.078s] [ 70%] Built target string_publisher
+[0.079s] [ 90%] Built target scan_subscriber
+[2.546s] [100%] [32m[1mLinking CXX executable fake_lidar_node[0m
+[2.729s] [100%] Built target fake_lidar_node
+[2.735s] Invoked command in '/home/glance/ros2_ws/build/hello_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --build /home/glance/ros2_ws/build/hello_ros2 -- -j20 -l20
+[2.742s] Invoking command in '/home/glance/ros2_ws/build/hello_ros2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/glance/ros2_ws/build/hello_ros2
+[2.746s] -- Install configuration: ""
+[2.746s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/ament_index/resource_index/package_run_dependencies/hello_ros2
+[2.747s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/ament_index/resource_index/parent_prefix_path/hello_ros2
+[2.747s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/environment/ament_prefix_path.sh
+[2.747s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/environment/ament_prefix_path.dsv
+[2.747s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/environment/path.sh
+[2.747s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/environment/path.dsv
+[2.747s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/local_setup.bash
+[2.747s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/local_setup.sh
+[2.747s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/local_setup.zsh
+[2.747s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/local_setup.dsv
+[2.747s] -- Installing: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/package.dsv
+[2.747s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/ament_index/resource_index/packages/hello_ros2
+[2.747s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/cmake/hello_ros2Config.cmake
+[2.747s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/cmake/hello_ros2Config-version.cmake
+[2.748s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/share/hello_ros2/package.xml
+[2.748s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/lib/hello_ros2/hello_node
+[2.749s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/lib/hello_ros2/string_publisher
+[2.750s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/lib/hello_ros2/string_subscriber
+[2.750s] -- Installing: /home/glance/ros2_ws/install/hello_ros2/lib/hello_ros2/fake_lidar_node
+[2.751s] -- Set runtime path of "/home/glance/ros2_ws/install/hello_ros2/lib/hello_ros2/fake_lidar_node" to ""
+[2.751s] -- Up-to-date: /home/glance/ros2_ws/install/hello_ros2/lib/hello_ros2/scan_subscriber
+[2.753s] Invoked command in '/home/glance/ros2_ws/build/hello_ros2' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake --install /home/glance/ros2_ws/build/hello_ros2

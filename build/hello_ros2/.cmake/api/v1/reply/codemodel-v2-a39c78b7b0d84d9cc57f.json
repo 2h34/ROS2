@@ -1,0 +1,115 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-db9ff1e94082d714478a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "hello_ros2",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "fake_lidar_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-fake_lidar_node-572d1701987babb658f9.json",
+					"name" : "fake_lidar_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "hello_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-hello_node-980bc2e8413e981abfd1.json",
+					"name" : "hello_node",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "hello_ros2_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-hello_ros2_uninstall-cdcb96dd6e1651858197.json",
+					"name" : "hello_ros2_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "scan_subscriber::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-scan_subscriber-adad02a204c2eafafd2b.json",
+					"name" : "scan_subscriber",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "string_publisher::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-string_publisher-115dc22b3b9667e83078.json",
+					"name" : "string_publisher",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "string_subscriber::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-string_subscriber-fc5b29a7f1e7c40db499.json",
+					"name" : "string_subscriber",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-aae3aae040b3700ef20a.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/glance/ros2_ws/build/hello_ros2",
+		"source" : "/home/glance/ros2_ws/src/hello_ros2"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
