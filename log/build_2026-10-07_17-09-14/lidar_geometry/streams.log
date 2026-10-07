@@ -1,0 +1,26 @@
+[0.009s] Invoking command in '/home/glance/ros2_ws/build/lidar_geometry': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/glance/ros2_ws/install/scan_to_points:/opt/ros/humble /usr/bin/cmake --build /home/glance/ros2_ws/build/lidar_geometry -- -j20 -l20
+[0.061s] [35m[1mConsolidate compiler generated dependencies of target scan_geometry_node[0m
+[0.072s] [ 50%] [32mBuilding CXX object CMakeFiles/scan_geometry_node.dir/src/scan_geometry_node.cpp.o[0m
+[8.816s] [100%] [32m[1mLinking CXX executable scan_geometry_node[0m
+[9.187s] [100%] Built target scan_geometry_node
+[9.192s] Invoked command in '/home/glance/ros2_ws/build/lidar_geometry' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/glance/ros2_ws/install/scan_to_points:/opt/ros/humble /usr/bin/cmake --build /home/glance/ros2_ws/build/lidar_geometry -- -j20 -l20
+[9.199s] Invoking command in '/home/glance/ros2_ws/build/lidar_geometry': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/glance/ros2_ws/install/scan_to_points:/opt/ros/humble /usr/bin/cmake --install /home/glance/ros2_ws/build/lidar_geometry
+[9.202s] -- Install configuration: ""
+[9.203s] -- Installing: /home/glance/ros2_ws/install/lidar_geometry/lib/lidar_geometry/scan_geometry_node
+[9.205s] -- Set runtime path of "/home/glance/ros2_ws/install/lidar_geometry/lib/lidar_geometry/scan_geometry_node" to ""
+[9.206s] -- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/ament_index/resource_index/package_run_dependencies/lidar_geometry
+[9.206s] -- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/ament_index/resource_index/parent_prefix_path/lidar_geometry
+[9.206s] -- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/environment/ament_prefix_path.sh
+[9.206s] -- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/environment/ament_prefix_path.dsv
+[9.206s] -- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/environment/path.sh
+[9.206s] -- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/environment/path.dsv
+[9.206s] -- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/local_setup.bash
+[9.206s] -- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/local_setup.sh
+[9.206s] -- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/local_setup.zsh
+[9.206s] -- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/local_setup.dsv
+[9.206s] -- Installing: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/package.dsv
+[9.206s] -- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/ament_index/resource_index/packages/lidar_geometry
+[9.206s] -- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/cmake/lidar_geometryConfig.cmake
+[9.206s] -- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/cmake/lidar_geometryConfig-version.cmake
+[9.206s] -- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/package.xml
+[9.208s] Invoked command in '/home/glance/ros2_ws/build/lidar_geometry' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/glance/ros2_ws/install/scan_to_points:/opt/ros/humble /usr/bin/cmake --install /home/glance/ros2_ws/build/lidar_geometry

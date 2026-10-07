@@ -3,6 +3,8 @@
 #include <vector>
 #include <Eigen/Dense>
 #include <Eigen/Eigenvalues>
+#include <limits>
+#include <algorithm>
 
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/laser_scan.hpp"
@@ -14,6 +16,271 @@ struct Point2D
     double y;
     std::size_t scan_index;
 };
+
+struct LineFit
+{
+    Eigen::Vector2d centroid;
+
+    Eigen::Vector2d normal;
+    Eigen::Vector2d direction;
+
+    double lambda_min;
+    double lambda_max;
+
+    double c;
+
+    double projection_min;
+    double projection_max;
+
+    Eigen::Vector2d endpoint_min;
+    Eigen::Vector2d endpoint_max;
+    Eigen::Vector2d visible_mid;
+
+    double visible_length;
+    double distance;
+    double yaw_rad;
+    double rmse;
+};
+
+LineFit fit_line_tls(const std::vector<Point2D> &points)
+{
+    LineFit fit;
+
+    // 1. 计算质心
+    double sum_x = 0.0;
+    double sum_y = 0.0;
+
+    for (std::size_t i = 0; i < points.size(); ++i)
+    {
+        sum_x += points[i].x;
+        sum_y += points[i].y;
+    }
+
+    fit.centroid.x() =
+        sum_x / static_cast<double>(points.size());
+
+    fit.centroid.y() =
+        sum_y / static_cast<double>(points.size());
+
+    // 2. 计算 scatter matrix
+    double s_xx = 0.0;
+    double s_xy = 0.0;
+    double s_yy = 0.0;
+
+    for (std::size_t i = 0; i < points.size(); ++i)
+    {
+        const double dx =
+            points[i].x - fit.centroid.x();
+
+        const double dy =
+            points[i].y - fit.centroid.y();
+
+        s_xx += dx * dx;
+        s_xy += dx * dy;
+        s_yy += dy * dy;
+    }
+
+    Eigen::Matrix2d scatter;
+    scatter << s_xx, s_xy,
+        s_xy, s_yy;
+
+    // 3. 特征分解
+    Eigen::SelfAdjointEigenSolver<Eigen::Matrix2d> solver(scatter);
+
+    fit.lambda_min =
+        solver.eigenvalues()(0);
+
+    fit.lambda_max =
+        solver.eigenvalues()(1);
+
+    fit.normal =
+        solver.eigenvectors().col(0);
+
+    fit.direction =
+        solver.eigenvectors().col(1);
+
+    // 4. 计算直线方程参数
+    fit.c = -(fit.normal.x() * fit.centroid.x() +
+              fit.normal.y() * fit.centroid.y());
+    fit.distance =
+        std::abs(fit.c);
+
+    // 5. 计算投影范围和可见长度
+    const double first_dx =
+        points[0].x - fit.centroid.x();
+
+    const double first_dy =
+        points[0].y - fit.centroid.y();
+
+    const double first_projection =
+        first_dx * fit.direction.x() +
+        first_dy * fit.direction.y();
+
+    fit.projection_min = first_projection;
+    fit.projection_max = first_projection;
+
+    for (std::size_t i = 1; i < points.size(); ++i)
+    {
+        const double dx =
+            points[i].x - fit.centroid.x();
+
+        const double dy =
+            points[i].y - fit.centroid.y();
+
+        const double projection =
+            dx * fit.direction.x() +
+            dy * fit.direction.y();
+
+        if (projection < fit.projection_min)
+        {
+            fit.projection_min = projection;
+        }
+
+        if (projection > fit.projection_max)
+        {
+            fit.projection_max = projection;
+        }
+    }
+    fit.visible_length =
+        fit.projection_max - fit.projection_min;
+
+    // 6. 计算可见中点和端点
+    const double projection_mid =
+        (fit.projection_min + fit.projection_max) / 2.0;
+
+    fit.endpoint_min =
+        fit.centroid +
+        fit.projection_min * fit.direction;
+
+    fit.endpoint_max =
+        fit.centroid +
+        fit.projection_max * fit.direction;
+
+    fit.visible_mid =
+        fit.centroid +
+        projection_mid * fit.direction;
+
+    // 7. 计算拟合误差
+    fit.rmse =
+        std::sqrt(
+            fit.lambda_min /
+            static_cast<double>(points.size()));
+
+    // 8. 计算方向角度
+    fit.yaw_rad = std::atan2(
+        fit.direction.y(),
+        fit.direction.x());
+    const double pi = 3.14159265358979323846;
+    if (fit.yaw_rad >= pi / 2.0)
+    {
+        fit.yaw_rad -= pi;
+    }
+    else if (fit.yaw_rad < -pi / 2.0)
+    {
+        fit.yaw_rad += pi;
+    }
+
+    return fit;
+}
+
+/// 将角度归一化到 [-pi/4, pi/4] 范围内
+double canonicalize_square_yaw(double yaw_rad)
+{
+    const double pi =
+        3.14159265358979323846;
+
+    const double half_pi =
+        pi / 2.0;
+
+    const double quarter_pi =
+        pi / 4.0;
+
+    while (yaw_rad >= quarter_pi)
+    {
+        yaw_rad -= half_pi;
+    }
+
+    while (yaw_rad < -quarter_pi)
+    {
+        yaw_rad += half_pi;
+    }
+
+    return yaw_rad;
+}
+
+/// 计算两条直线方向向量的点积绝对值
+double line_direction_dot(
+    const LineFit &line1,
+    const LineFit &line2)
+{
+    return std::abs(
+        line1.direction.dot(line2.direction));
+}
+
+/// 计算两条直线的交点,如果平行则返回 false
+bool intersect_lines(
+    const LineFit &line1,
+    const LineFit &line2,
+    Eigen::Vector2d &intersection)
+{
+    const double a1 = line1.normal.x();
+    const double b1 = line1.normal.y();
+
+    const double a2 = line2.normal.x();
+    const double b2 = line2.normal.y();
+
+    const double determinant =
+        a1 * b2 - a2 * b1;
+
+    if (std::abs(determinant) < 1e-9)
+    {
+        return false;
+    }
+
+    intersection.x() =
+        (b1 * line2.c - b2 * line1.c) /
+        determinant;
+
+    intersection.y() =
+        (a2 * line1.c - a1 * line2.c) /
+        determinant;
+
+    return true;
+}
+
+/// 计算点到线段端点的最小距离
+double distance_to_nearest_endpoint(
+    const LineFit &line,
+    const Eigen::Vector2d &point)
+{
+    const double d_min =
+        (point - line.endpoint_min).norm();
+    //.norm() 计算向量的长度。
+
+    const double d_max =
+        (point - line.endpoint_max).norm();
+
+    return std::min(d_min, d_max);
+}
+
+/// 计算从角点到线段的边缘方向向量,判断是否反向
+Eigen::Vector2d edge_direction_from_corner(
+    const LineFit &line,
+    const Eigen::Vector2d &corner)
+{
+    Eigen::Vector2d edge_direction =
+        line.direction;
+
+    const Eigen::Vector2d corner_to_segment =
+        line.visible_mid - corner;
+
+    if (edge_direction.dot(corner_to_segment) < 0.0)
+    {
+        edge_direction = -edge_direction;
+    }
+
+    return edge_direction;
+}
 
 class ScanGeometryNode : public rclcpp::Node
 {
@@ -43,6 +310,7 @@ private:
         std::size_t valid_count = 0;
         std::size_t rejected_count = 0;
         std::vector<Point2D> points;
+        const double pi = 3.14159265358979323846;
 
         for (std::size_t i = 0; i < msg->ranges.size(); ++i)
         {
@@ -94,10 +362,10 @@ private:
             ++valid_count;
         }
 
-        const double x_min = -0.20;
-        const double x_max = 0.25;
-        const double y_min = -0.34;
-        const double y_max = -0.25;
+        const double x_min = -0.25;
+        const double x_max = 0.29;
+        const double y_min = -1.10;
+        const double y_max = -0.24;
 
         std::vector<Point2D> candidate_points;
 
@@ -128,6 +396,7 @@ private:
             const double gap_threshold = 0.02;
 
             std::vector<std::size_t> segment_sizes;
+            std::vector<std::vector<Point2D>> segments;
 
             std::size_t current_segment_size = 1;
 
@@ -200,6 +469,7 @@ private:
                 candidate_points.back().scan_index,
                 max_index_gap,
                 max_point_gap);
+
             RCLCPP_INFO(
                 this->get_logger(),
                 "max_gap: scan=%zu->%zu "
@@ -212,248 +482,262 @@ private:
                 max_gap_curr_point.y,
                 max_point_gap);
 
-            /*求解质心*/
-            double sum_x = 0.0;
-            double sum_y = 0.0;
+            const LineFit fit =
+                fit_line_tls(candidate_points);
+            const double box_side_length = 0.350;
 
-            for (std::size_t i = 0; i < candidate_points.size(); ++i)
+            // 计算传感器原点到拟合线的法向量方向,以确定箱体中心位置
+            const Eigen::Vector2d sensor_origin(0.0, 0.0);
+
+            const Eigen::Vector2d to_sensor =
+                sensor_origin - fit.visible_mid;
+
+            Eigen::Vector2d inward_normal =
+                fit.normal;
+
+            if (fit.normal.dot(to_sensor) > 0.0)
             {
-                sum_x += candidate_points[i].x;
-                sum_y += candidate_points[i].y;
+                inward_normal = -fit.normal;
             }
+            const Eigen::Vector2d box_center =
+                fit.visible_mid +
+                0.5 * box_side_length * inward_normal;
 
-            const double centroid_x =
-                sum_x / candidate_points.size();
+            // 计算箱体中心点到传感器原点的方向角度,以确定箱体朝向
+            const double box_yaw_rad =
+                canonicalize_square_yaw(fit.yaw_rad);
+            const double length_ratio =
+                fit.visible_length / box_side_length;
 
-            const double centroid_y =
-                sum_y / candidate_points.size();
+            // splikt两条线段
+            const std::size_t min_points_for_fit = 3;
 
-            /*求解协方差矩阵*/
-            double s_xx = 0.0;
-            double s_xy = 0.0;
-            double s_yy = 0.0;
+            double best_objective =
+                std::numeric_limits<double>::infinity(); // 初始化无穷大
 
-            for (std::size_t i = 0; i < candidate_points.size(); ++i)
+            std::size_t best_split = 0;
+
+            for (std::size_t k = min_points_for_fit;
+                 k + min_points_for_fit <= candidate_points.size();
+                 ++k)
             {
-                const double dx =
-                    candidate_points[i].x - centroid_x;
+                std::vector<Point2D> points1(
+                    candidate_points.begin(),
+                    candidate_points.begin() + k);
 
-                const double dy =
-                    candidate_points[i].y - centroid_y;
+                std::vector<Point2D> points2(
+                    candidate_points.begin() + k,
+                    candidate_points.end());
 
-                s_xx += dx * dx;
-                s_xy += dx * dy;
-                s_yy += dy * dy;
+                const LineFit line1 =
+                    fit_line_tls(points1);
+
+                const LineFit line2 =
+                    fit_line_tls(points2);
+
+                const double objective =
+                    line1.lambda_min +
+                    line2.lambda_min;
+
+                if (objective < best_objective)
+                {
+                    best_objective = objective;
+                    best_split = k;
+                }
             }
             RCLCPP_INFO(
                 this->get_logger(),
-                "scatter: Sxx=%.6f Sxy=%.6f Syy=%.6f",
-                s_xx,
-                s_xy,
-                s_yy);
+                "two_line_search: "
+                "N=%zu best_split=%zu "
+                "sizes=(%zu,%zu) "
+                "J=%.6f",
+                candidate_points.size(),
+                best_split,
+                best_split,
+                candidate_points.size() - best_split,
+                best_objective);
 
-            /*求解特征值，特征向量*/
-            Eigen::Matrix2d scatter;
-            scatter << s_xx, s_xy,
-                s_xy, s_yy;
-            Eigen::SelfAdjointEigenSolver<Eigen::Matrix2d> solver(scatter);
-            const double lambda_min =
-                solver.eigenvalues()(0);
-            const double lambda_max =
-                solver.eigenvalues()(1);
-            const Eigen::Vector2d normal =
-                solver.eigenvectors().col(0);
-            const Eigen::Vector2d direction =
-                solver.eigenvectors().col(1);
+            // 恢复最佳两组点，并拟合两条直线，求交点
+            if (best_split > 0)
+            {
+                std::vector<Point2D> best_points1(
+                    candidate_points.begin(),
+                    candidate_points.begin() + best_split);
+
+                std::vector<Point2D> best_points2(
+                    candidate_points.begin() + best_split,
+                    candidate_points.end());
+
+                const LineFit best_line1 =
+                    fit_line_tls(best_points1);
+
+                const LineFit best_line2 =
+                    fit_line_tls(best_points2);
+
+                // 计算两条直线的有效点数量和可见长度
+                const std::size_t support_points1 =
+                    best_points1.size();
+
+                const std::size_t support_points2 =
+                    best_points2.size();
+
+                const double support_length1 =
+                    best_line1.visible_length;
+
+                const double support_length2 =
+                    best_line2.visible_length;
+
+                const std::size_t min_support_points =
+                    std::min(
+                        support_points1,
+                        support_points2);
+
+                const double min_support_length =
+                    std::min(
+                        support_length1,
+                        support_length2);
+
+                RCLCPP_INFO(
+                    this->get_logger(),
+                    "two_line_support: "
+                    "points=(%zu,%zu) "
+                    "min_points=%zu "
+                    "length=(%.3f,%.3f) "
+                    "min_length=%.3f "
+                    "rmse=(%.4f,%.4f)",
+                    support_points1,
+                    support_points2,
+                    min_support_points,
+                    support_length1,
+                    support_length2,
+                    min_support_length,
+                    best_line1.rmse,
+                    best_line2.rmse);
+
+                // 计算两条直线方向向量的点积绝对值
+                const double direction_dot = line_direction_dot(
+                    best_line1,
+                    best_line2);
+                Eigen::Vector2d intersection;
+
+                // 计算两条直线的交点,如果平行则返回 false
+                const bool has_intersection =
+                    intersect_lines(
+                        best_line1,
+                        best_line2,
+                        intersection);
+                if (has_intersection)
+                {
+                    // 计算交点到两条线段端点的最小距离
+                    const double endpoint_distance1 =
+                        distance_to_nearest_endpoint(
+                            best_line1,
+                            intersection);
+
+                    const double endpoint_distance2 =
+                        distance_to_nearest_endpoint(
+                            best_line2,
+                            intersection);
+
+                    // 求边缘方向向量（确定方向）,得到正方形中心
+                    const Eigen::Vector2d u1 =
+                        edge_direction_from_corner(
+                            best_line1,
+                            intersection);
+
+                    const Eigen::Vector2d u2 =
+                        edge_direction_from_corner(
+                            best_line2,
+                            intersection);
+
+                    const Eigen::Vector2d corner_candidate_center =
+                        intersection + 0.5 * box_side_length * u1 + 0.5 * box_side_length * u2;
+
+                    // 计算角点的方向角度,归一化到 [-pi/4, pi/4] 范围内
+                    const double corner_candidate_yaw_rad =
+                        canonicalize_square_yaw(
+                            std::atan2(
+                                u1.y(),
+                                u1.x()));
+
+                    RCLCPP_INFO(
+                        this->get_logger(),
+                        "two_line_geometry: "
+                        "dot=%.4f "
+                        "intersection=(%.3f, %.3f) "
+                        "end_dist=(%.3f, %.3f)",
+                        direction_dot,
+                        intersection.x(),
+                        intersection.y(),
+                        endpoint_distance1,
+                        endpoint_distance2);
+                    RCLCPP_INFO(
+                        this->get_logger(),
+                        "corner_candidate: "
+                        "u1=(%.3f,%.3f) "
+                        "u2=(%.3f,%.3f) "
+                        "center=(%.3f,%.3f) "
+                        "yaw=%.2f deg",
+                        u1.x(),
+                        u1.y(),
+                        u2.x(),
+                        u2.y(),
+                        corner_candidate_center.x(),
+                        corner_candidate_center.y(),
+                        corner_candidate_yaw_rad * 180.0 / pi);
+                }
+                else
+                {
+                    RCLCPP_INFO(
+                        this->get_logger(),
+                        "two_line_geometry: "
+                        "dot=%.4f "
+                        "intersection=NONE",
+                        direction_dot);
+                }
+            }
+            RCLCPP_INFO(
+                this->get_logger(),
+                "single_face: "
+                "length_ratio=%.3f "
+                "inward=(%.4f, %.4f) "
+                "box_center=(%.3f, %.3f) "
+                "box_yaw=%.2f deg",
+                length_ratio,
+                inward_normal.x(),
+                inward_normal.y(),
+                box_center.x(),
+                box_center.y(),
+                box_yaw_rad * 180.0 / pi);
 
             RCLCPP_INFO(
                 this->get_logger(),
                 "eigen: lambda_min=%.6f lambda_max=%.6f "
                 "normal=(%.4f, %.4f) direction=(%.4f, %.4f)",
-                lambda_min,
-                lambda_max,
-                normal.x(),
-                normal.y(),
-                direction.x(),
-                direction.y());
+                fit.lambda_min,
+                fit.lambda_max,
+                fit.normal.x(),
+                fit.normal.y(),
+                fit.direction.x(),
+                fit.direction.y());
 
-            /*求解直线方程*/
-            const double a = normal.x();
-            const double b = normal.y();
-            const double c =
-                -(a * centroid_x + b * centroid_y);
             RCLCPP_INFO(
                 this->get_logger(),
                 "line: %.6f*x + %.6f*y + %.6f = 0",
-                a,
-                b,
-                c);
-            const double centroid_residual =
-                a * centroid_x +
-                b * centroid_y +
-                c;
-            RCLCPP_INFO(
-                this->get_logger(),
-                "centroid_residual=%.9f",
-                centroid_residual);
-
-            /*求解距离，方向，可见长度, 可见中点*/
-            const double distance =
-                std::abs(c);
-            const double direction_angle_rad =
-                std::atan2(
-                    direction.y(),
-                    direction.x());
-            const double direction_angle_deg =
-                direction_angle_rad *
-                180.0 /
-                3.14159265358979323846;
-            const double first_dx =
-                candidate_points[0].x - centroid_x;
-            const double first_dy =
-                candidate_points[0].y - centroid_y;
-            const double first_projection =
-                first_dx * direction.x() +
-                first_dy * direction.y();
-            double projection_min = first_projection;
-            double projection_max = first_projection;
-            for (std::size_t i = 1; i < candidate_points.size(); ++i)
-            {
-                const double dx =
-                    candidate_points[i].x - centroid_x;
-
-                const double dy =
-                    candidate_points[i].y - centroid_y;
-
-                const double projection =
-                    dx * direction.x() +
-                    dy * direction.y();
-
-                if (projection < projection_min)
-                {
-                    projection_min = projection;
-                }
-
-                if (projection > projection_max)
-                {
-                    projection_max = projection;
-                }
-            }
-            const double visible_length =
-                projection_max - projection_min;
-            const double projection_mid =
-                (projection_min + projection_max) / 2.0;
-            const double visible_mid_x =
-                centroid_x +
-                projection_mid * direction.x();
-            const double visible_mid_y =
-                centroid_y +
-                projection_mid * direction.y();
-
-            const double endpoint_min_x =
-                centroid_x +
-                projection_min * direction.x();
-
-            const double endpoint_min_y =
-                centroid_y +
-                projection_min * direction.y();
-
-            const double endpoint_max_x =
-                centroid_x +
-                projection_max * direction.x();
-
-            const double endpoint_max_y =
-                centroid_y +
-                projection_max * direction.y();
+                fit.normal.x(),
+                fit.normal.y(),
+                fit.c);
 
             RCLCPP_INFO(
                 this->get_logger(),
                 "endpoints: p_min=(%.3f, %.3f) p_max=(%.3f, %.3f)",
-                endpoint_min_x,
-                endpoint_min_y,
-                endpoint_max_x,
-                endpoint_max_y);
-            RCLCPP_INFO(
-                this->get_logger(),
-                "geometry: distance=%.3f m angle=%.2f deg visible_length=%.3f m",
-                distance,
-                direction_angle_deg,
-                visible_length);
-            RCLCPP_INFO(
-                this->get_logger(),
-                "visible_mid: s_mid=%.4f m x=%.3f y=%.3f",
-                projection_mid,
-                visible_mid_x,
-                visible_mid_y);
+                fit.endpoint_min.x(),
+                fit.endpoint_min.y(),
+                fit.endpoint_max.x(),
+                fit.endpoint_max.y());
 
-            /*求解实际的x，y范围*/
-            double candidate_x_min = candidate_points[0].x;
-            double candidate_x_max = candidate_points[0].x;
-            double candidate_y_min = candidate_points[0].y;
-            double candidate_y_max = candidate_points[0].y;
-
-            RCLCPP_INFO(
-                this->get_logger(),
-                "centroid: x=%.3f y=%.3f",
-                centroid_x,
-                centroid_y);
-
-            for (std::size_t i = 1; i < candidate_points.size(); ++i)
-            {
-                const Point2D point = candidate_points[i];
-
-                if (point.x < candidate_x_min)
-                {
-                    candidate_x_min = point.x;
-                }
-
-                if (point.x > candidate_x_max)
-                {
-                    candidate_x_max = point.x;
-                }
-
-                if (point.y < candidate_y_min)
-                {
-                    candidate_y_min = point.y;
-                }
-
-                if (point.y > candidate_y_max)
-                {
-                    candidate_y_max = point.y;
-                }
-            }
-
-            RCLCPP_INFO(
-                this->get_logger(),
-                "candidate_range: x=[%.3f, %.3f] y=[%.3f, %.3f]",
-                candidate_x_min,
-                candidate_x_max,
-                candidate_y_min,
-                candidate_y_max);
-
-            /*求显示平均距离偏移量，并校准角度范围*/
-            const double fit_rmse =
-                std::sqrt(
-                    lambda_min /
-                    static_cast<double>(candidate_points.size()));
             const double pi = 3.14159265358979323846;
 
-            double face_yaw_rad =
-                std::atan2(
-                    direction.y(),
-                    direction.x());
-
-            if (face_yaw_rad >= pi / 2.0)
-            {
-                face_yaw_rad -= pi;
-            }
-            else if (face_yaw_rad < -pi / 2.0)
-            {
-                face_yaw_rad += pi;
-            }
-
-            const double face_yaw_deg =
-                face_yaw_rad * 180.0 / pi;
             RCLCPP_INFO(
                 this->get_logger(),
                 "observation: "
@@ -462,12 +746,12 @@ private:
                 "yaw=%.2f deg "
                 "width=%.3f m "
                 "fit_rmse=%.4f m",
-                visible_mid_x,
-                visible_mid_y,
-                distance,
-                face_yaw_deg,
-                visible_length,
-                fit_rmse);
+                fit.visible_mid.x(),
+                fit.visible_mid.y(),
+                fit.distance,
+                fit.yaw_rad * 180.0 / pi,
+                fit.visible_length,
+                fit.rmse);
 
             /*计算底盘误差*/
             const double target_mid_x = 0.0;
@@ -475,13 +759,13 @@ private:
             const double target_yaw_rad = 0.0;
 
             const double error_x =
-                visible_mid_x - target_mid_x;
+                fit.visible_mid.x() - target_mid_x;
 
             const double error_distance =
-                distance - target_distance;
+                fit.distance - target_distance;
 
             double error_yaw =
-                face_yaw_rad - target_yaw_rad;
+                fit.yaw_rad - target_yaw_rad;
 
             if (error_yaw >= pi / 2.0)
             {

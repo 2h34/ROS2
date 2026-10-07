@@ -1,0 +1,7 @@
+[01m[K/home/glance/ros2_ws/src/lidar_geometry/src/scan_geometry_node.cpp:[m[K In member function ‘[01m[Kvoid ScanGeometryNode::scan_callback(sensor_msgs::msg::LaserScan_<std::allocator<void> >::SharedPtr)[m[K’:
+[01m[K/home/glance/ros2_ws/src/lidar_geometry/src/scan_geometry_node.cpp:570:35:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kmin_support_points[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  570 |                 const std::size_t [01;35m[Kmin_support_points[m[K =
+      |                                   [01;35m[K^~~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/glance/ros2_ws/src/lidar_geometry/src/scan_geometry_node.cpp:575:30:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kmin_support_length[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  575 |                 const double [01;35m[Kmin_support_length[m[K =
+      |                              [01;35m[K^~~~~~~~~~~~~~~~~~[m[K
