@@ -1,0 +1,130 @@
+[0.000000] (-) TimerEvent: {}
+[0.000103] (-) JobUnselected: {'identifier': 'hello_ros2'}
+[0.000119] (-) JobUnselected: {'identifier': 'scan_to_points'}
+[0.000127] (-) JobUnselected: {'identifier': 'sllidar_ros2'}
+[0.000142] (lidar_geometry) JobQueued: {'identifier': 'lidar_geometry', 'dependencies': OrderedDict()}
+[0.000169] (lidar_geometry) JobStarted: {'identifier': 'lidar_geometry'}
+[0.006546] (lidar_geometry) JobProgress: {'identifier': 'lidar_geometry', 'progress': 'cmake'}
+[0.007154] (lidar_geometry) JobProgress: {'identifier': 'lidar_geometry', 'progress': 'build'}
+[0.007542] (lidar_geometry) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/glance/ros2_ws/build/lidar_geometry', '--', '-j20', '-l20'], 'cwd': '/home/glance/ros2_ws/build/lidar_geometry', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'glance'), ('GIT_ASKPASS', '/home/glance/.vscode-server/bin/07f806f999227108933c2e30515b26eecc1fda74/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'update-motd'), ('HOME', '/home/glance'), ('TERM_PROGRAM_VERSION', '1.140.0'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-f697d267-a400-4b6d-bdf8-2765264f16ea.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/glance/.vscode-server/bin/07f806f999227108933c2e30515b26eecc1fda74/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/glance/.vscode-server/bin/07f806f999227108933c2e30515b26eecc1fda74/node'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/home/glance/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/glance/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'glance'), ('NAME', 'LAPTOP-DBED9HEM'), ('WSL_INTEROP', '/run/WSL/421_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('CLAUDE_CODE_SSE_PORT', '29961'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/glance/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/glance/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/glance/.vscode-server/bin/07f806f999227108933c2e30515b26eecc1fda74/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Windows/system32:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Bandizip/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/:/mnt/d/Program Files/MATLAB/R2022b/runtime/win64:/mnt/d/Program Files/MATLAB/R2022b/bin:/mnt/d/Git/cmd:/mnt/d/w64devkit/bin:/mnt/c/Program Files/GitHub CLI/:/mnt/c/Program Files/nodejs/:/mnt/c/Program Files/usbipd-win/:/mnt/c/Users/glance/AppData/Local/Programs/Python/Python312:/mnt/c/Users/glance/AppData/Local/Programs/Python/Python312/Scripts:/mnt/c/Users/glance/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/glance/.local/bin:/mnt/c/Users/glance/AppData/Local/Microsoft/WindowsApps:/mnt/d/Microsoft VS Code/bin:/mnt/c/Users/glance/AppData/Roaming/npm:/mnt/c/Users/glance/AppData/Local/Programs/DockerDesktop/resources/bin:/mnt/c/Users/glance/AppData/Local/Programs/Antigravity IDE/bin:/snap/bin:/home/glance/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/glance/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-580b45fcd1e5e7d9.txt'), ('LANG', 'C.UTF-8'), ('PYTHONSTARTUP', '/home/glance/.vscode-server/data/User/workspaceStorage/1177d6106f5c3ba0e132b1beb0f7ef4a/ms-python.python/pythonrc.py'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-31e3e36e1c.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/glance/ros2_ws/install/sllidar_ros2:/home/glance/ros2_ws/install/scan_to_points:/home/glance/ros2_ws/install/lidar_geometry:/home/glance/ros2_ws/install/hello_ros2:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/glance/ros2_ws/build/lidar_geometry'), ('COPILOT_DEBUG_NONCE', '1955c59c298aa31b7bb73b142bec54f5'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/glance/ros2_ws/install/scan_to_points/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/glance/ros2_ws/install/sllidar_ros2:/home/glance/ros2_ws/install/lidar_geometry:/home/glance/ros2_ws/install/hello_ros2:/home/glance/ros2_ws/install/scan_to_points:/opt/ros/humble'), ('WSLENV', 'VSCODE_WSL_EXT_LOCATION/up')]), 'shell': False}
+[0.061448] (lidar_geometry) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target scan_geometry_node\x1b[0m\n'}
+[0.070354] (lidar_geometry) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/scan_geometry_node.dir/src/scan_geometry_node.cpp.o\x1b[0m\n'}
+[0.099417] (-) TimerEvent: {}
+[0.199731] (-) TimerEvent: {}
+[0.300064] (-) TimerEvent: {}
+[0.400477] (-) TimerEvent: {}
+[0.500838] (-) TimerEvent: {}
+[0.601203] (-) TimerEvent: {}
+[0.701607] (-) TimerEvent: {}
+[0.802117] (-) TimerEvent: {}
+[0.902485] (-) TimerEvent: {}
+[1.002841] (-) TimerEvent: {}
+[1.103182] (-) TimerEvent: {}
+[1.203611] (-) TimerEvent: {}
+[1.304001] (-) TimerEvent: {}
+[1.404385] (-) TimerEvent: {}
+[1.504734] (-) TimerEvent: {}
+[1.605103] (-) TimerEvent: {}
+[1.705459] (-) TimerEvent: {}
+[1.805799] (-) TimerEvent: {}
+[1.906147] (-) TimerEvent: {}
+[2.006581] (-) TimerEvent: {}
+[2.106940] (-) TimerEvent: {}
+[2.207299] (-) TimerEvent: {}
+[2.307698] (-) TimerEvent: {}
+[2.408032] (-) TimerEvent: {}
+[2.508411] (-) TimerEvent: {}
+[2.608745] (-) TimerEvent: {}
+[2.709075] (-) TimerEvent: {}
+[2.809417] (-) TimerEvent: {}
+[2.909767] (-) TimerEvent: {}
+[3.010105] (-) TimerEvent: {}
+[3.110453] (-) TimerEvent: {}
+[3.210787] (-) TimerEvent: {}
+[3.311130] (-) TimerEvent: {}
+[3.411458] (-) TimerEvent: {}
+[3.511828] (-) TimerEvent: {}
+[3.612259] (-) TimerEvent: {}
+[3.712604] (-) TimerEvent: {}
+[3.812926] (-) TimerEvent: {}
+[3.913256] (-) TimerEvent: {}
+[4.013584] (-) TimerEvent: {}
+[4.113903] (-) TimerEvent: {}
+[4.214253] (-) TimerEvent: {}
+[4.314634] (-) TimerEvent: {}
+[4.414996] (-) TimerEvent: {}
+[4.515345] (-) TimerEvent: {}
+[4.615767] (-) TimerEvent: {}
+[4.716106] (-) TimerEvent: {}
+[4.816469] (-) TimerEvent: {}
+[4.916828] (-) TimerEvent: {}
+[5.017192] (-) TimerEvent: {}
+[5.117527] (-) TimerEvent: {}
+[5.217871] (-) TimerEvent: {}
+[5.318197] (-) TimerEvent: {}
+[5.418550] (-) TimerEvent: {}
+[5.518944] (-) TimerEvent: {}
+[5.619516] (-) TimerEvent: {}
+[5.719910] (-) TimerEvent: {}
+[5.820264] (-) TimerEvent: {}
+[5.920624] (-) TimerEvent: {}
+[6.020999] (-) TimerEvent: {}
+[6.121382] (-) TimerEvent: {}
+[6.221763] (-) TimerEvent: {}
+[6.322084] (-) TimerEvent: {}
+[6.422422] (-) TimerEvent: {}
+[6.522736] (-) TimerEvent: {}
+[6.623056] (-) TimerEvent: {}
+[6.723393] (-) TimerEvent: {}
+[6.823755] (-) TimerEvent: {}
+[6.924079] (-) TimerEvent: {}
+[7.024411] (-) TimerEvent: {}
+[7.124742] (-) TimerEvent: {}
+[7.225055] (-) TimerEvent: {}
+[7.325368] (-) TimerEvent: {}
+[7.425704] (-) TimerEvent: {}
+[7.526132] (-) TimerEvent: {}
+[7.626456] (-) TimerEvent: {}
+[7.726785] (-) TimerEvent: {}
+[7.827098] (-) TimerEvent: {}
+[7.927429] (-) TimerEvent: {}
+[8.027735] (-) TimerEvent: {}
+[8.128092] (-) TimerEvent: {}
+[8.228520] (-) TimerEvent: {}
+[8.328838] (-) TimerEvent: {}
+[8.429202] (-) TimerEvent: {}
+[8.529537] (-) TimerEvent: {}
+[8.629878] (-) TimerEvent: {}
+[8.730207] (-) TimerEvent: {}
+[8.830551] (-) TimerEvent: {}
+[8.880450] (lidar_geometry) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable scan_geometry_node\x1b[0m\n'}
+[8.930679] (-) TimerEvent: {}
+[9.031007] (-) TimerEvent: {}
+[9.131417] (-) TimerEvent: {}
+[9.231872] (-) TimerEvent: {}
+[9.325841] (lidar_geometry) StdoutLine: {'line': b'[100%] Built target scan_geometry_node\n'}
+[9.331978] (-) TimerEvent: {}
+[9.332578] (lidar_geometry) CommandEnded: {'returncode': 0}
+[9.333552] (lidar_geometry) JobProgress: {'identifier': 'lidar_geometry', 'progress': 'install'}
+[9.338703] (lidar_geometry) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/glance/ros2_ws/build/lidar_geometry'], 'cwd': '/home/glance/ros2_ws/build/lidar_geometry', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'glance'), ('GIT_ASKPASS', '/home/glance/.vscode-server/bin/07f806f999227108933c2e30515b26eecc1fda74/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'update-motd'), ('HOME', '/home/glance'), ('TERM_PROGRAM_VERSION', '1.140.0'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-f697d267-a400-4b6d-bdf8-2765264f16ea.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/glance/.vscode-server/bin/07f806f999227108933c2e30515b26eecc1fda74/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/glance/.vscode-server/bin/07f806f999227108933c2e30515b26eecc1fda74/node'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/home/glance/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('COLCON_PREFIX_PATH', '/home/glance/ros2_ws/install'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'glance'), ('NAME', 'LAPTOP-DBED9HEM'), ('WSL_INTEROP', '/run/WSL/421_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('CLAUDE_CODE_SSE_PORT', '29961'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/glance/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/glance/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/glance/.vscode-server/bin/07f806f999227108933c2e30515b26eecc1fda74/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Windows/system32:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Bandizip/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/:/mnt/d/Program Files/MATLAB/R2022b/runtime/win64:/mnt/d/Program Files/MATLAB/R2022b/bin:/mnt/d/Git/cmd:/mnt/d/w64devkit/bin:/mnt/c/Program Files/GitHub CLI/:/mnt/c/Program Files/nodejs/:/mnt/c/Program Files/usbipd-win/:/mnt/c/Users/glance/AppData/Local/Programs/Python/Python312:/mnt/c/Users/glance/AppData/Local/Programs/Python/Python312/Scripts:/mnt/c/Users/glance/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/glance/.local/bin:/mnt/c/Users/glance/AppData/Local/Microsoft/WindowsApps:/mnt/d/Microsoft VS Code/bin:/mnt/c/Users/glance/AppData/Roaming/npm:/mnt/c/Users/glance/AppData/Local/Programs/DockerDesktop/resources/bin:/mnt/c/Users/glance/AppData/Local/Programs/Antigravity IDE/bin:/snap/bin:/home/glance/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/glance/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-580b45fcd1e5e7d9.txt'), ('LANG', 'C.UTF-8'), ('PYTHONSTARTUP', '/home/glance/.vscode-server/data/User/workspaceStorage/1177d6106f5c3ba0e132b1beb0f7ef4a/ms-python.python/pythonrc.py'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-31e3e36e1c.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/home/glance/ros2_ws/install/sllidar_ros2:/home/glance/ros2_ws/install/scan_to_points:/home/glance/ros2_ws/install/lidar_geometry:/home/glance/ros2_ws/install/hello_ros2:/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/glance/ros2_ws/build/lidar_geometry'), ('COPILOT_DEBUG_NONCE', '1955c59c298aa31b7bb73b142bec54f5'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/glance/ros2_ws/install/scan_to_points/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('CMAKE_PREFIX_PATH', '/home/glance/ros2_ws/install/sllidar_ros2:/home/glance/ros2_ws/install/lidar_geometry:/home/glance/ros2_ws/install/hello_ros2:/home/glance/ros2_ws/install/scan_to_points:/opt/ros/humble'), ('WSLENV', 'VSCODE_WSL_EXT_LOCATION/up')]), 'shell': False}
+[9.342860] (lidar_geometry) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[9.343334] (lidar_geometry) StdoutLine: {'line': b'-- Installing: /home/glance/ros2_ws/install/lidar_geometry/lib/lidar_geometry/scan_geometry_node\n'}
+[9.346367] (lidar_geometry) StdoutLine: {'line': b'-- Set runtime path of "/home/glance/ros2_ws/install/lidar_geometry/lib/lidar_geometry/scan_geometry_node" to ""\n'}
+[9.346493] (lidar_geometry) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/ament_index/resource_index/package_run_dependencies/lidar_geometry\n'}
+[9.346637] (lidar_geometry) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/ament_index/resource_index/parent_prefix_path/lidar_geometry\n'}
+[9.346682] (lidar_geometry) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/environment/ament_prefix_path.sh\n'}
+[9.346758] (lidar_geometry) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/environment/ament_prefix_path.dsv\n'}
+[9.346786] (lidar_geometry) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/environment/path.sh\n'}
+[9.346809] (lidar_geometry) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/environment/path.dsv\n'}
+[9.346848] (lidar_geometry) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/local_setup.bash\n'}
+[9.346870] (lidar_geometry) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/local_setup.sh\n'}
+[9.346890] (lidar_geometry) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/local_setup.zsh\n'}
+[9.346910] (lidar_geometry) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/local_setup.dsv\n'}
+[9.346930] (lidar_geometry) StdoutLine: {'line': b'-- Installing: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/package.dsv\n'}
+[9.346949] (lidar_geometry) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/ament_index/resource_index/packages/lidar_geometry\n'}
+[9.346972] (lidar_geometry) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/cmake/lidar_geometryConfig.cmake\n'}
+[9.346992] (lidar_geometry) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/cmake/lidar_geometryConfig-version.cmake\n'}
+[9.347012] (lidar_geometry) StdoutLine: {'line': b'-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/package.xml\n'}
+[9.348624] (lidar_geometry) CommandEnded: {'returncode': 0}
+[9.363303] (lidar_geometry) JobEnded: {'identifier': 'lidar_geometry', 'rc': 0}
+[9.363868] (-) EventReactorShutdown: {}

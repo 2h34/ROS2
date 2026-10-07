@@ -1,0 +1,22 @@
+[35m[1mConsolidate compiler generated dependencies of target scan_geometry_node[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/scan_geometry_node.dir/src/scan_geometry_node.cpp.o[0m
+[100%] [32m[1mLinking CXX executable scan_geometry_node[0m
+[100%] Built target scan_geometry_node
+-- Install configuration: ""
+-- Installing: /home/glance/ros2_ws/install/lidar_geometry/lib/lidar_geometry/scan_geometry_node
+-- Set runtime path of "/home/glance/ros2_ws/install/lidar_geometry/lib/lidar_geometry/scan_geometry_node" to ""
+-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/ament_index/resource_index/package_run_dependencies/lidar_geometry
+-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/ament_index/resource_index/parent_prefix_path/lidar_geometry
+-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/environment/ament_prefix_path.sh
+-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/environment/path.sh
+-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/environment/path.dsv
+-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/local_setup.bash
+-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/local_setup.sh
+-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/local_setup.zsh
+-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/local_setup.dsv
+-- Installing: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/package.dsv
+-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/ament_index/resource_index/packages/lidar_geometry
+-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/cmake/lidar_geometryConfig.cmake
+-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/cmake/lidar_geometryConfig-version.cmake
+-- Up-to-date: /home/glance/ros2_ws/install/lidar_geometry/share/lidar_geometry/package.xml
