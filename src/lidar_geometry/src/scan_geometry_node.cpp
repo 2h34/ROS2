@@ -10,6 +10,7 @@
 #include "sensor_msgs/msg/laser_scan.hpp"
 #include <cmath>
 
+/// 二维点集
 struct Point2D
 {
     double x;
@@ -17,6 +18,7 @@ struct Point2D
     std::size_t scan_index;
 };
 
+/// @brief 二维点集的最小二乘直线拟合结果
 struct LineFit
 {
     Eigen::Vector2d centroid;
@@ -42,6 +44,7 @@ struct LineFit
     double rmse;
 };
 
+/// @brief 使用总最小二乘法对二维点集进行直线拟合
 LineFit fit_line_tls(const std::vector<Point2D> &points)
 {
     LineFit fit;
@@ -398,6 +401,10 @@ private:
             std::vector<std::size_t> segment_sizes;
             std::vector<std::vector<Point2D>> segments;
 
+            // 第一个 candidate point 属于第一段
+            segments.emplace_back();
+            segments.back().push_back(candidate_points.front());
+
             std::size_t current_segment_size = 1;
 
             for (std::size_t i = 1; i < candidate_points.size(); ++i)
@@ -442,11 +449,16 @@ private:
                 {
                     segment_sizes.push_back(current_segment_size);
                     current_segment_size = 1;
+
+                    // 出现明显间隔，开启新的 segment
+                    segments.emplace_back();
                 }
                 else
                 {
                     ++current_segment_size;
                 }
+                // 当前第 i 个点加入当前 segment
+                segments.back().push_back(candidate_points[i]);
             }
             segment_sizes.push_back(current_segment_size); /*最后一段*/
             RCLCPP_INFO(
@@ -461,6 +473,49 @@ private:
                     i,
                     segment_sizes[i]);
             }
+            RCLCPP_INFO(
+                this->get_logger(),
+                "saved_segments: count=%zu",
+                segments.size());
+
+            for (std::size_t i = 0; i < segments.size(); ++i)
+            {
+                RCLCPP_INFO(
+                    this->get_logger(),
+                    "saved_segment[%zu]: size=%zu",
+                    i,
+                    segments[i].size());
+            }
+
+            // 找到点数最多的 segment 作为目标 segment
+            std::size_t target_segment_index = 0;
+
+            for (std::size_t i = 1; i < segments.size(); ++i)
+            {
+                if (segments[i].size() >
+                    segments[target_segment_index].size())
+                {
+                    target_segment_index = i;
+                }
+            }
+
+            const std::vector<Point2D> &target_points =
+                segments[target_segment_index];
+
+            RCLCPP_INFO(
+                this->get_logger(),
+                "target_selection: "
+                "candidate=%zu "
+                "segments=%zu "
+                "selected=%zu "
+                "target=%zu "
+                "dropped=%zu",
+                candidate_points.size(),
+                segments.size(),
+                target_segment_index,
+                target_points.size(),
+                candidate_points.size() - target_points.size());
+
             RCLCPP_INFO(
                 this->get_logger(),
                 "continuity: scan_index=[%zu, %zu] "
@@ -482,8 +537,9 @@ private:
                 max_gap_curr_point.y,
                 max_point_gap);
 
+            // 对target segment 进行线性拟合
             const LineFit fit =
-                fit_line_tls(candidate_points);
+                fit_line_tls(target_points);
             const double box_side_length = 0.350;
 
             // 计算传感器原点到拟合线的法向量方向,以确定箱体中心位置
@@ -518,16 +574,16 @@ private:
             std::size_t best_split = 0;
 
             for (std::size_t k = min_points_for_fit;
-                 k + min_points_for_fit <= candidate_points.size();
+                 k + min_points_for_fit <= target_points.size();
                  ++k)
             {
                 std::vector<Point2D> points1(
-                    candidate_points.begin(),
-                    candidate_points.begin() + k);
+                    target_points.begin(),
+                    target_points.begin() + k);
 
                 std::vector<Point2D> points2(
-                    candidate_points.begin() + k,
-                    candidate_points.end());
+                    target_points.begin() + k,
+                    target_points.end());
 
                 const LineFit line1 =
                     fit_line_tls(points1);
@@ -551,22 +607,22 @@ private:
                 "N=%zu best_split=%zu "
                 "sizes=(%zu,%zu) "
                 "J=%.6f",
-                candidate_points.size(),
+                target_points.size(),
                 best_split,
                 best_split,
-                candidate_points.size() - best_split,
+                target_points.size() - best_split,
                 best_objective);
 
             // 恢复最佳两组点，并拟合两条直线，求交点
             if (best_split > 0)
             {
                 std::vector<Point2D> best_points1(
-                    candidate_points.begin(),
-                    candidate_points.begin() + best_split);
+                    target_points.begin(),
+                    target_points.begin() + best_split);
 
                 std::vector<Point2D> best_points2(
-                    candidate_points.begin() + best_split,
-                    candidate_points.end());
+                    target_points.begin() + best_split,
+                    target_points.end());
 
                 const LineFit best_line1 =
                     fit_line_tls(best_points1);
