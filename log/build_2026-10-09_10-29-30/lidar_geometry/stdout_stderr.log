@@ -1,0 +1,20 @@
+[35m[1mConsolidate compiler generated dependencies of target scan_geometry_node[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/scan_geometry_node.dir/src/scan_geometry_node.cpp.o[0m
+[01m[K/home/glance/ros2_ws/src/lidar_geometry/src/scan_geometry_node.cpp:996:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K}[m[K’ at end of input
+  996 | }
+      |  [01;31m[K^[m[K
+[01m[K/home/glance/ros2_ws/src/lidar_geometry/src/scan_geometry_node.cpp:289:1:[m[K [01;36m[Knote: [m[Kto match this ‘[01m[K{[m[K’
+  289 | [01;36m[K{[m[K
+      | [01;36m[K^[m[K
+[01m[K/home/glance/ros2_ws/src/lidar_geometry/src/scan_geometry_node.cpp:[m[K In constructor ‘[01m[KScanGeometryNode::ScanGeometryNode()[m[K’:
+[01m[K/home/glance/ros2_ws/src/lidar_geometry/src/scan_geometry_node.cpp:297:9:[m[K [01;31m[Kerror: [m[K‘[01m[Ksubscription_[m[K’ was not declared in this scope; did you mean ‘[01m[Krmw_subscription_t[m[K’?
+  297 |         [01;31m[Ksubscription_[m[K =
+      |         [01;31m[K^~~~~~~~~~~~~[m[K
+      |         [32m[Krmw_subscription_t[m[K
+[01m[K/home/glance/ros2_ws/src/lidar_geometry/src/scan_geometry_node.cpp:[m[K At global scope:
+[01m[K/home/glance/ros2_ws/src/lidar_geometry/src/scan_geometry_node.cpp:996:2:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id at end of input
+  996 | }
+      |  [01;31m[K^[m[K
+gmake[2]: *** [CMakeFiles/scan_geometry_node.dir/build.make:76: CMakeFiles/scan_geometry_node.dir/src/scan_geometry_node.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/scan_geometry_node.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

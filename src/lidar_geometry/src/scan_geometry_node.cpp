@@ -8,6 +8,8 @@
 
 #include "rclcpp/rclcpp.hpp"
 #include "sensor_msgs/msg/laser_scan.hpp"
+#include <geometry_msgs/msg/pose_stamped.hpp>
+#include <std_msgs/msg/string.hpp>
 #include <cmath>
 
 /// 二维点集
@@ -302,6 +304,13 @@ public:
                     &ScanGeometryNode::scan_callback,
                     this,
                     std::placeholders::_1));
+        pose_publisher_ =
+            this->create_publisher<geometry_msgs::msg::PoseStamped>(
+                "/box_pose", 10);
+
+        mode_publisher_ =
+            this->create_publisher<std_msgs::msg::String>(
+                "/box_mode", 10);
     }
 
 private:
@@ -365,8 +374,8 @@ private:
             ++valid_count;
         }
 
-        const double x_min = -0.25;
-        const double x_max = 0.29;
+        const double x_min = -0.25; //-0.25
+        const double x_max = 0.29;  // 0.29
         const double y_min = -1.10;
         const double y_max = -0.24;
 
@@ -383,6 +392,28 @@ private:
             {
                 candidate_points.push_back(point);
             }
+        }
+
+        // ROI 中的点不足，无法进行可靠的直线拟合
+        if (candidate_points.size() < 3)
+        {
+            RCLCPP_WARN(
+                this->get_logger(),
+                "input_check: insufficient candidate_points N=%zu",
+                candidate_points.size());
+
+            RCLCPP_INFO(
+                this->get_logger(),
+                "pose_mode: INVALID");
+
+            RCLCPP_INFO(
+                this->get_logger(),
+                "pose_result: mode=INVALID");
+
+            std_msgs::msg::String mode_msg;
+            mode_msg.data = "INVALID";
+            mode_publisher_->publish(mode_msg);
+            return;
         }
 
         if (!candidate_points.empty())
@@ -516,6 +547,28 @@ private:
                 target_points.size(),
                 candidate_points.size() - target_points.size());
 
+            // 最大连续段的点数不足
+            if (target_points.size() < 3)
+            {
+                RCLCPP_WARN(
+                    this->get_logger(),
+                    "input_check: insufficient target_points N=%zu",
+                    target_points.size());
+
+                RCLCPP_INFO(
+                    this->get_logger(),
+                    "pose_mode: INVALID");
+
+                RCLCPP_INFO(
+                    this->get_logger(),
+                    "pose_result: mode=INVALID");
+
+                std_msgs::msg::String mode_msg;
+                mode_msg.data = "INVALID";
+                mode_publisher_->publish(mode_msg);
+                return;
+            }
+
             RCLCPP_INFO(
                 this->get_logger(),
                 "continuity: scan_index=[%zu, %zu] "
@@ -565,6 +618,23 @@ private:
             const double length_ratio =
                 fit.visible_length / box_side_length;
 
+            // 检查 Single-Line 是否对应可信的完整箱边
+            const double single_rmse_threshold = 0.005; // RMSE阈值
+            const double single_length_ratio_min = 0.95;
+            const double single_length_ratio_max = 1.05;
+
+            const bool single_valid =
+                (fit.rmse <= single_rmse_threshold) &&
+                (length_ratio >= single_length_ratio_min) &&
+                (length_ratio <= single_length_ratio_max);
+
+            RCLCPP_INFO(
+                this->get_logger(),
+                "single_check: valid=%s rmse=%.4f length_ratio=%.3f",
+                single_valid ? "PASS" : "FAIL",
+                fit.rmse,
+                length_ratio);
+
             // splikt两条线段
             const std::size_t min_points_for_fit = 3;
 
@@ -612,6 +682,13 @@ private:
                 best_split,
                 target_points.size() - best_split,
                 best_objective);
+
+            // 默认不接受 Corner 候选
+            bool corner_valid = false;
+
+            // 保存通过几何检查的 Corner 位姿
+            Eigen::Vector2d corner_center = Eigen::Vector2d::Zero();
+            double corner_yaw_rad = 0.0;
 
             // 恢复最佳两组点，并拟合两条直线，求交点
             if (best_split > 0)
@@ -695,6 +772,20 @@ private:
                             best_line2,
                             intersection);
 
+                    // Corner 五项几何有效性检查
+                    const double corner_dot_threshold = 0.15;
+                    const std::size_t corner_min_points = 10;
+                    const double corner_min_length = 0.10;
+                    const double corner_rmse_threshold = 0.005;
+                    const double corner_end_dist_threshold = 0.015;
+
+                    corner_valid =
+                        (direction_dot <= corner_dot_threshold) &&
+                        (min_support_points >= corner_min_points) &&
+                        (min_support_length >= corner_min_length) &&
+                        (std::max(best_line1.rmse, best_line2.rmse) <= corner_rmse_threshold) &&
+                        (std::max(endpoint_distance1, endpoint_distance2) <= corner_end_dist_threshold);
+
                     // 求边缘方向向量（确定方向）,得到正方形中心
                     const Eigen::Vector2d u1 =
                         edge_direction_from_corner(
@@ -715,6 +806,13 @@ private:
                             std::atan2(
                                 u1.y(),
                                 u1.x()));
+
+                    // 仅保存通过有效性检查的 Corner 位姿
+                    if (corner_valid)
+                    {
+                        corner_center = corner_candidate_center;
+                        corner_yaw_rad = corner_candidate_yaw_rad;
+                    }
 
                     RCLCPP_INFO(
                         this->get_logger(),
@@ -752,6 +850,88 @@ private:
                         direction_dot);
                 }
             }
+
+            // 判断 Corner 几何有效性
+            RCLCPP_INFO(
+                this->get_logger(),
+                "corner_check: valid=%s",
+                corner_valid ? "PASS" : "FAIL");
+
+            // 根据几何有效性选择最终观测模式
+            const char *mode = "INVALID";
+
+            if (single_valid)
+            {
+                mode = "SINGLE_FACE";
+            }
+            else if (corner_valid)
+            {
+                mode = "CORNER";
+            }
+
+            RCLCPP_INFO(
+                this->get_logger(),
+                "pose_mode: %s",
+                mode);
+
+            // 根据模式输出可信的箱体位姿
+            if (single_valid)
+            {
+                RCLCPP_INFO(
+                    this->get_logger(),
+                    "pose_result: mode=SINGLE_FACE x=%.3f y=%.3f yaw=%.4f rad",
+                    box_center.x(),
+                    box_center.y(),
+                    box_yaw_rad);
+            }
+            else if (corner_valid)
+            {
+                RCLCPP_INFO(
+                    this->get_logger(),
+                    "pose_result: mode=CORNER x=%.3f y=%.3f yaw=%.4f rad",
+                    corner_center.x(),
+                    corner_center.y(),
+                    corner_yaw_rad);
+            }
+            else
+            {
+                RCLCPP_INFO(
+                    this->get_logger(),
+                    "pose_result: mode=INVALID");
+            }
+
+            // 每帧发布观测模式
+            std_msgs::msg::String mode_msg;
+            mode_msg.data = mode;
+            mode_publisher_->publish(mode_msg);
+
+            // 仅发布通过几何检查的箱体位姿
+            if (single_valid || corner_valid)
+            {
+                geometry_msgs::msg::PoseStamped pose_msg;
+
+                // 保留激光扫描的时间戳和坐标系
+                pose_msg.header = msg->header;
+
+                const Eigen::Vector2d center =
+                    single_valid ? box_center : corner_center;
+
+                const double yaw =
+                    single_valid ? box_yaw_rad : corner_yaw_rad;
+
+                pose_msg.pose.position.x = center.x();
+                pose_msg.pose.position.y = center.y();
+                pose_msg.pose.position.z = 0.0;
+
+                // 平面 yaw 转换成四元数
+                pose_msg.pose.orientation.x = 0.0;
+                pose_msg.pose.orientation.y = 0.0;
+                pose_msg.pose.orientation.z = std::sin(yaw / 2.0);
+                pose_msg.pose.orientation.w = std::cos(yaw / 2.0);
+
+                pose_publisher_->publish(pose_msg);
+            }
+
             RCLCPP_INFO(
                 this->get_logger(),
                 "single_face: "
@@ -809,34 +989,34 @@ private:
                 fit.visible_length,
                 fit.rmse);
 
-            /*计算底盘误差*/
-            const double target_mid_x = 0.0;
-            const double target_distance = 0.30; /*Test,实际来自真实任务*/
-            const double target_yaw_rad = 0.0;
+            //     /*计算底盘误差*/
+            //     const double target_mid_x = 0.0;
+            //     const double target_distance = 0.30; /*Test,实际来自真实任务*/
+            //     const double target_yaw_rad = 0.0;
 
-            const double error_x =
-                fit.visible_mid.x() - target_mid_x;
+            //     const double error_x =
+            //         fit.visible_mid.x() - target_mid_x;
 
-            const double error_distance =
-                fit.distance - target_distance;
+            //     const double error_distance =
+            //         fit.distance - target_distance;
 
-            double error_yaw =
-                fit.yaw_rad - target_yaw_rad;
+            //     double error_yaw =
+            //         fit.yaw_rad - target_yaw_rad;
 
-            if (error_yaw >= pi / 2.0)
-            {
-                error_yaw -= pi;
-            }
-            else if (error_yaw < -pi / 2.0)
-            {
-                error_yaw += pi;
-            }
-            RCLCPP_INFO(
-                this->get_logger(),
-                "error: x=%.3f  distance=%.3f  yaw=%.2f deg",
-                error_x,
-                error_distance,
-                error_yaw * 180.0 / pi);
+            //     if (error_yaw >= pi / 2.0)
+            //     {
+            //         error_yaw -= pi;
+            //     }
+            //     else if (error_yaw < -pi / 2.0)
+            //     {
+            //         error_yaw += pi;
+            //     }
+            //     RCLCPP_INFO(
+            //         this->get_logger(),
+            //         "error: x=%.3f  distance=%.3f  yaw=%.2f deg",
+            //         error_x,
+            //         error_distance,
+            //         error_yaw * 180.0 / pi);
         }
 
         RCLCPP_INFO(
@@ -851,6 +1031,12 @@ private:
 
     rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr
         subscription_;
+
+    rclcpp::Publisher<geometry_msgs::msg::PoseStamped>::SharedPtr
+        pose_publisher_;
+
+    rclcpp::Publisher<std_msgs::msg::String>::SharedPtr
+        mode_publisher_;
 };
 
 int main(int argc, char *argv[])
