@@ -23,28 +23,27 @@ struct Point2D
 /// @brief 二维点集的最小二乘直线拟合结果
 struct LineFit
 {
-    Eigen::Vector2d centroid;
+    Eigen::Vector2d centroid; //质心坐标
 
-    Eigen::Vector2d normal;
-    Eigen::Vector2d direction;
+    Eigen::Vector2d normal; //法向量
+    Eigen::Vector2d direction; //方向向量
 
-    double lambda_min;
+    double lambda_min; 
     double lambda_max;
 
-    double c;
+    double c; //直线方程参数,满足 ax + by + c = 0
 
-    double projection_min;
-    double projection_max;
+    double projection_min; //观测点投影范围最小值
+    double projection_max; //观测点投影范围最大值
 
-    Eigen::Vector2d endpoint_min;
-    Eigen::Vector2d endpoint_max;
-    Eigen::Vector2d visible_mid;
+    Eigen::Vector2d endpoint_min; //线段端点最小值
+    Eigen::Vector2d endpoint_max; //线段端点最大值
+    Eigen::Vector2d visible_mid; //线段可见中点
 
-    double visible_length;
-    double distance;
-    double yaw_rad;
-    double rmse;
-};
+    double visible_length; //线段可见长度
+    double distance; //传感器原点到拟合线的距离
+    double yaw_rad; //线段方向角度,弧度制
+    double rmse; //拟合误差（均方根误差，即平均每点到拟合直线的垂直距离）
 
 /// @brief 使用总最小二乘法对二维点集进行直线拟合
 LineFit fit_line_tls(const std::vector<Point2D> &points)
@@ -91,9 +90,9 @@ LineFit fit_line_tls(const std::vector<Point2D> &points)
 
     // 3. 特征分解
     Eigen::SelfAdjointEigenSolver<Eigen::Matrix2d> solver(scatter);
-
+    
     fit.lambda_min =
-        solver.eigenvalues()(0);
+        solver.eigenvalues()(0); //对应最小特征值的特征向量是法向量（垂直距离的平方和最小）
 
     fit.lambda_max =
         solver.eigenvalues()(1);
@@ -172,7 +171,7 @@ LineFit fit_line_tls(const std::vector<Point2D> &points)
             static_cast<double>(points.size()));
 
     // 8. 计算方向角度
-    fit.yaw_rad = std::atan2(
+    fit.yaw_rad = std::atan2( //atan2：能根据x，y符号判断象限
         fit.direction.y(),
         fit.direction.x());
     const double pi = 3.14159265358979323846;
@@ -328,7 +327,8 @@ private:
         {
             const float r = msg->ranges[i];
 
-            if (!std::isfinite(r))
+            //筛选无效数据
+            if (!std::isfinite(r))  
             {
                 ++rejected_count;
                 continue;
@@ -340,15 +340,7 @@ private:
                 continue;
             }
 
-            // const double theta =
-            //     msg->angle_min + i * msg->angle_increment;
-
-            // Point2D point;
-            // point.x = r * std::cos(theta);
-            // point.y = r * std::sin(theta);
-
-            // points.push_back(point);
-            // ++valid_count;
+            //坐标转换，并保存原始点集到容器
             const double theta =
                 msg->angle_min + i * msg->angle_increment;
 
@@ -374,6 +366,7 @@ private:
             ++valid_count;
         }
 
+        //初始化ROI区域（这里人眼测定）
         const double x_min = -0.25; //-0.25
         const double x_max = 0.29;  // 0.29
         const double y_min = -1.10;
@@ -612,7 +605,7 @@ private:
                 fit.visible_mid +
                 0.5 * box_side_length * inward_normal;
 
-            // 计算箱体中心点到传感器原点的方向角度,以确定箱体朝向
+            // 计算箱体中心点到传感器原点的方向角度,以确定箱体朝向（-pi/4~pi/4）
             const double box_yaw_rad =
                 canonicalize_square_yaw(fit.yaw_rad);
             const double length_ratio =
@@ -643,6 +636,7 @@ private:
 
             std::size_t best_split = 0;
 
+            //遍历，寻找两条线段拟合之和最佳点（λmin之和）
             for (std::size_t k = min_points_for_fit;
                  k + min_points_for_fit <= target_points.size();
                  ++k)
