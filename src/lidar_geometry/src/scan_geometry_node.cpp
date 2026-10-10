@@ -44,6 +44,7 @@ struct LineFit
     double distance; //传感器原点到拟合线的距离
     double yaw_rad; //线段方向角度,弧度制
     double rmse; //拟合误差（均方根误差，即平均每点到拟合直线的垂直距离）
+};
 
 /// @brief 使用总最小二乘法对二维点集进行直线拟合
 LineFit fit_line_tls(const std::vector<Point2D> &points)
