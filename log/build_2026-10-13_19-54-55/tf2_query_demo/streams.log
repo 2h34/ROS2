@@ -1,0 +1,26 @@
+[0.009s] Invoking command in '/home/glance/ros2_ws/build/tf2_query_demo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/glance/ros2_ws/install/scan_to_points:/opt/ros/humble /usr/bin/cmake --build /home/glance/ros2_ws/build/tf2_query_demo -- -j20 -l20
+[0.066s] [35m[1mConsolidate compiler generated dependencies of target tf_query[0m
+[0.077s] [ 50%] [32mBuilding CXX object CMakeFiles/tf_query.dir/src/tf_query.cpp.o[0m
+[2.415s] [100%] [32m[1mLinking CXX executable tf_query[0m
+[2.562s] [100%] Built target tf_query
+[2.567s] Invoked command in '/home/glance/ros2_ws/build/tf2_query_demo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/glance/ros2_ws/install/scan_to_points:/opt/ros/humble /usr/bin/cmake --build /home/glance/ros2_ws/build/tf2_query_demo -- -j20 -l20
+[2.573s] Invoking command in '/home/glance/ros2_ws/build/tf2_query_demo': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/glance/ros2_ws/install/scan_to_points:/opt/ros/humble /usr/bin/cmake --install /home/glance/ros2_ws/build/tf2_query_demo
+[2.576s] -- Install configuration: ""
+[2.576s] -- Installing: /home/glance/ros2_ws/install/tf2_query_demo/lib/tf2_query_demo/tf_query
+[2.576s] -- Set runtime path of "/home/glance/ros2_ws/install/tf2_query_demo/lib/tf2_query_demo/tf_query" to ""
+[2.576s] -- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/ament_index/resource_index/package_run_dependencies/tf2_query_demo
+[2.576s] -- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/ament_index/resource_index/parent_prefix_path/tf2_query_demo
+[2.577s] -- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/environment/ament_prefix_path.sh
+[2.577s] -- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/environment/ament_prefix_path.dsv
+[2.577s] -- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/environment/path.sh
+[2.577s] -- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/environment/path.dsv
+[2.577s] -- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/local_setup.bash
+[2.577s] -- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/local_setup.sh
+[2.577s] -- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/local_setup.zsh
+[2.577s] -- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/local_setup.dsv
+[2.577s] -- Installing: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/package.dsv
+[2.577s] -- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/ament_index/resource_index/packages/tf2_query_demo
+[2.577s] -- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/cmake/tf2_query_demoConfig.cmake
+[2.577s] -- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/cmake/tf2_query_demoConfig-version.cmake
+[2.577s] -- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/package.xml
+[2.578s] Invoked command in '/home/glance/ros2_ws/build/tf2_query_demo' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/glance/ros2_ws/install/scan_to_points:/opt/ros/humble /usr/bin/cmake --install /home/glance/ros2_ws/build/tf2_query_demo

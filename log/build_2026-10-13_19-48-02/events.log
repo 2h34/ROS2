@@ -1,0 +1,161 @@
+[0.000000] (-) TimerEvent: {}
+[0.000630] (-) JobUnselected: {'identifier': 'hello_ros2'}
+[0.000654] (-) JobUnselected: {'identifier': 'lidar_geometry'}
+[0.000748] (-) JobUnselected: {'identifier': 'scan_to_points'}
+[0.000763] (-) JobUnselected: {'identifier': 'sllidar_ros2'}
+[0.000772] (tf2_query_demo) JobQueued: {'identifier': 'tf2_query_demo', 'dependencies': OrderedDict()}
+[0.000783] (tf2_query_demo) JobStarted: {'identifier': 'tf2_query_demo'}
+[0.010181] (tf2_query_demo) JobProgress: {'identifier': 'tf2_query_demo', 'progress': 'cmake'}
+[0.012170] (tf2_query_demo) Command: {'cmd': ['/usr/bin/cmake', '/home/glance/ros2_ws/src/tf2_query_demo', '-DCMAKE_INSTALL_PREFIX=/home/glance/ros2_ws/install/tf2_query_demo'], 'cwd': '/home/glance/ros2_ws/build/tf2_query_demo', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'glance'), ('GIT_ASKPASS', '/home/glance/.vscode-server/bin/2a59476c9bfcb90b3ddc372c36762471b7dfad1c/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'update-motd'), ('HOME', '/home/glance'), ('OLDPWD', '/home/glance/ros2_ws/src'), ('TERM_PROGRAM_VERSION', '1.141.0'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-8406cd8b-f432-4afa-bdda-fa001643b4da.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/glance/.vscode-server/bin/2a59476c9bfcb90b3ddc372c36762471b7dfad1c/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/glance/.vscode-server/bin/2a59476c9bfcb90b3ddc372c36762471b7dfad1c/node'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/home/glance/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'glance'), ('NAME', 'LAPTOP-DBED9HEM'), ('WSL_INTEROP', '/run/WSL/420_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('CLAUDE_CODE_SSE_PORT', '37845'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/glance/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/glance/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/glance/.vscode-server/bin/2a59476c9bfcb90b3ddc372c36762471b7dfad1c/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Windows/system32:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Bandizip/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/:/mnt/d/Program Files/MATLAB/R2022b/runtime/win64:/mnt/d/Program Files/MATLAB/R2022b/bin:/mnt/d/Git/cmd:/mnt/d/w64devkit/bin:/mnt/c/Program Files/GitHub CLI/:/mnt/c/Program Files/nodejs/:/mnt/c/Program Files/usbipd-win/:/mnt/c/Users/glance/AppData/Local/Programs/Python/Python312:/mnt/c/Users/glance/AppData/Local/Programs/Python/Python312/Scripts:/mnt/c/Users/glance/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/glance/.local/bin:/mnt/c/Users/glance/AppData/Local/Microsoft/WindowsApps:/mnt/d/Microsoft VS Code/bin:/mnt/c/Users/glance/AppData/Roaming/npm:/mnt/c/Users/glance/AppData/Local/Programs/DockerDesktop/resources/bin:/mnt/c/Users/glance/AppData/Local/Programs/Antigravity IDE/bin:/snap/bin:/home/glance/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/glance/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-0bc354aacb6251b3.txt'), ('LANG', 'C.UTF-8'), ('PYTHONSTARTUP', '/home/glance/.vscode-server/data/User/workspaceStorage/1177d6106f5c3ba0e132b1beb0f7ef4a/ms-python.python/pythonrc.py'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-31e3e36e1c.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/glance/ros2_ws/build/tf2_query_demo'), ('COPILOT_DEBUG_NONCE', '1955c59c298aa31b7bb73b142bec54f5'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('WSLENV', 'VSCODE_WSL_EXT_LOCATION/up'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.099561] (-) TimerEvent: {}
+[0.199918] (-) TimerEvent: {}
+[0.210350] (tf2_query_demo) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.300076] (-) TimerEvent: {}
+[0.400473] (-) TimerEvent: {}
+[0.500787] (-) TimerEvent: {}
+[0.590991] (tf2_query_demo) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.600915] (-) TimerEvent: {}
+[0.701232] (-) TimerEvent: {}
+[0.801557] (-) TimerEvent: {}
+[0.851580] (tf2_query_demo) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.901702] (-) TimerEvent: {}
+[0.942885] (tf2_query_demo) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.946429] (tf2_query_demo) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.946755] (tf2_query_demo) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.947385] (tf2_query_demo) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.950028] (tf2_query_demo) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[1.001829] (-) TimerEvent: {}
+[1.067858] (tf2_query_demo) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[1.071629] (tf2_query_demo) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[1.071906] (tf2_query_demo) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[1.072066] (tf2_query_demo) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[1.093301] (tf2_query_demo) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.14 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[1.102002] (-) TimerEvent: {}
+[1.199398] (tf2_query_demo) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[1.202048] (-) TimerEvent: {}
+[1.278253] (tf2_query_demo) StdoutLine: {'line': b'-- Found rclcpp: 16.0.19 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[1.302210] (-) TimerEvent: {}
+[1.402576] (-) TimerEvent: {}
+[1.440494] (tf2_query_demo) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.9 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[1.445124] (tf2_query_demo) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.9 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.454342] (tf2_query_demo) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.9 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[1.467048] (tf2_query_demo) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.479912] (tf2_query_demo) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.502715] (-) TimerEvent: {}
+[1.519616] (tf2_query_demo) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.3 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[1.524594] (tf2_query_demo) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.10 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.602843] (-) TimerEvent: {}
+[1.703171] (-) TimerEvent: {}
+[1.803487] (-) TimerEvent: {}
+[1.903817] (-) TimerEvent: {}
+[2.004138] (-) TimerEvent: {}
+[2.104490] (-) TimerEvent: {}
+[2.204788] (-) TimerEvent: {}
+[2.305086] (-) TimerEvent: {}
+[2.346952] (tf2_query_demo) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  \n'}
+[2.405213] (-) TimerEvent: {}
+[2.505511] (-) TimerEvent: {}
+[2.605826] (-) TimerEvent: {}
+[2.706133] (-) TimerEvent: {}
+[2.806447] (-) TimerEvent: {}
+[2.906815] (-) TimerEvent: {}
+[3.007255] (-) TimerEvent: {}
+[3.107561] (-) TimerEvent: {}
+[3.207875] (-) TimerEvent: {}
+[3.216438] (tf2_query_demo) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/humble/include  \n'}
+[3.308012] (-) TimerEvent: {}
+[3.408312] (-) TimerEvent: {}
+[3.508637] (-) TimerEvent: {}
+[3.608932] (-) TimerEvent: {}
+[3.709232] (-) TimerEvent: {}
+[3.809591] (-) TimerEvent: {}
+[3.912920] (-) TimerEvent: {}
+[4.013337] (-) TimerEvent: {}
+[4.113656] (-) TimerEvent: {}
+[4.213963] (-) TimerEvent: {}
+[4.314263] (-) TimerEvent: {}
+[4.414572] (-) TimerEvent: {}
+[4.514901] (-) TimerEvent: {}
+[4.615228] (-) TimerEvent: {}
+[4.715553] (-) TimerEvent: {}
+[4.815889] (-) TimerEvent: {}
+[4.916243] (-) TimerEvent: {}
+[4.944080] (tf2_query_demo) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[4.952625] (tf2_query_demo) StdoutLine: {'line': b'-- Looking for pthread.h\n'}
+[5.016408] (-) TimerEvent: {}
+[5.053358] (tf2_query_demo) StdoutLine: {'line': b'-- Looking for pthread.h - found\n'}
+[5.053590] (tf2_query_demo) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n'}
+[5.116523] (-) TimerEvent: {}
+[5.137033] (tf2_query_demo) StdoutLine: {'line': b'-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n'}
+[5.137643] (tf2_query_demo) StdoutLine: {'line': b'-- Found Threads: TRUE  \n'}
+[5.185457] (tf2_query_demo) StdoutLine: {'line': b'-- Found tf2: 0.25.22 (/opt/ros/humble/share/tf2/cmake)\n'}
+[5.203539] (tf2_query_demo) StdoutLine: {'line': b'-- Found tf2_ros: 0.25.22 (/opt/ros/humble/share/tf2_ros/cmake)\n'}
+[5.216667] (-) TimerEvent: {}
+[5.272603] (tf2_query_demo) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.15 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[5.316790] (-) TimerEvent: {}
+[5.325476] (tf2_query_demo) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[5.325633] (tf2_query_demo) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[5.325669] (tf2_query_demo) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[5.326172] (tf2_query_demo) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[5.326821] (tf2_query_demo) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[5.326903] (tf2_query_demo) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[5.327381] (tf2_query_demo) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[5.328702] (tf2_query_demo) StdoutLine: {'line': b'-- Configuring done\n'}
+[5.337383] (tf2_query_demo) StdoutLine: {'line': b'-- Generating done\n'}
+[5.339495] (tf2_query_demo) StdoutLine: {'line': b'-- Build files have been written to: /home/glance/ros2_ws/build/tf2_query_demo\n'}
+[5.347395] (tf2_query_demo) CommandEnded: {'returncode': 0}
+[5.347836] (tf2_query_demo) JobProgress: {'identifier': 'tf2_query_demo', 'progress': 'build'}
+[5.348838] (tf2_query_demo) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/glance/ros2_ws/build/tf2_query_demo', '--', '-j20', '-l20'], 'cwd': '/home/glance/ros2_ws/build/tf2_query_demo', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'glance'), ('GIT_ASKPASS', '/home/glance/.vscode-server/bin/2a59476c9bfcb90b3ddc372c36762471b7dfad1c/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'update-motd'), ('HOME', '/home/glance'), ('OLDPWD', '/home/glance/ros2_ws/src'), ('TERM_PROGRAM_VERSION', '1.141.0'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-8406cd8b-f432-4afa-bdda-fa001643b4da.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/glance/.vscode-server/bin/2a59476c9bfcb90b3ddc372c36762471b7dfad1c/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/glance/.vscode-server/bin/2a59476c9bfcb90b3ddc372c36762471b7dfad1c/node'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/home/glance/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'glance'), ('NAME', 'LAPTOP-DBED9HEM'), ('WSL_INTEROP', '/run/WSL/420_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('CLAUDE_CODE_SSE_PORT', '37845'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/glance/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/glance/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/glance/.vscode-server/bin/2a59476c9bfcb90b3ddc372c36762471b7dfad1c/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Windows/system32:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Bandizip/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/:/mnt/d/Program Files/MATLAB/R2022b/runtime/win64:/mnt/d/Program Files/MATLAB/R2022b/bin:/mnt/d/Git/cmd:/mnt/d/w64devkit/bin:/mnt/c/Program Files/GitHub CLI/:/mnt/c/Program Files/nodejs/:/mnt/c/Program Files/usbipd-win/:/mnt/c/Users/glance/AppData/Local/Programs/Python/Python312:/mnt/c/Users/glance/AppData/Local/Programs/Python/Python312/Scripts:/mnt/c/Users/glance/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/glance/.local/bin:/mnt/c/Users/glance/AppData/Local/Microsoft/WindowsApps:/mnt/d/Microsoft VS Code/bin:/mnt/c/Users/glance/AppData/Roaming/npm:/mnt/c/Users/glance/AppData/Local/Programs/DockerDesktop/resources/bin:/mnt/c/Users/glance/AppData/Local/Programs/Antigravity IDE/bin:/snap/bin:/home/glance/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/glance/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-0bc354aacb6251b3.txt'), ('LANG', 'C.UTF-8'), ('PYTHONSTARTUP', '/home/glance/.vscode-server/data/User/workspaceStorage/1177d6106f5c3ba0e132b1beb0f7ef4a/ms-python.python/pythonrc.py'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-31e3e36e1c.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/glance/ros2_ws/build/tf2_query_demo'), ('COPILOT_DEBUG_NONCE', '1955c59c298aa31b7bb73b142bec54f5'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('WSLENV', 'VSCODE_WSL_EXT_LOCATION/up'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[5.378093] (tf2_query_demo) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/tf_query.dir/src/tf_query.cpp.o\x1b[0m\n'}
+[5.416917] (-) TimerEvent: {}
+[5.517240] (-) TimerEvent: {}
+[5.617544] (-) TimerEvent: {}
+[5.717841] (-) TimerEvent: {}
+[5.818160] (-) TimerEvent: {}
+[5.918514] (-) TimerEvent: {}
+[6.018912] (-) TimerEvent: {}
+[6.119302] (-) TimerEvent: {}
+[6.219655] (-) TimerEvent: {}
+[6.319980] (-) TimerEvent: {}
+[6.420314] (-) TimerEvent: {}
+[6.520711] (-) TimerEvent: {}
+[6.621127] (-) TimerEvent: {}
+[6.721455] (-) TimerEvent: {}
+[6.821788] (-) TimerEvent: {}
+[6.922118] (-) TimerEvent: {}
+[7.022458] (-) TimerEvent: {}
+[7.122815] (-) TimerEvent: {}
+[7.223146] (-) TimerEvent: {}
+[7.323470] (-) TimerEvent: {}
+[7.423809] (-) TimerEvent: {}
+[7.524131] (-) TimerEvent: {}
+[7.624494] (-) TimerEvent: {}
+[7.724797] (-) TimerEvent: {}
+[7.729826] (tf2_query_demo) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable tf_query\x1b[0m\n'}
+[7.824932] (-) TimerEvent: {}
+[7.900216] (tf2_query_demo) StdoutLine: {'line': b'[100%] Built target tf_query\n'}
+[7.905882] (tf2_query_demo) CommandEnded: {'returncode': 0}
+[7.906268] (tf2_query_demo) JobProgress: {'identifier': 'tf2_query_demo', 'progress': 'install'}
+[7.910987] (tf2_query_demo) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/glance/ros2_ws/build/tf2_query_demo'], 'cwd': '/home/glance/ros2_ws/build/tf2_query_demo', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'glance'), ('GIT_ASKPASS', '/home/glance/.vscode-server/bin/2a59476c9bfcb90b3ddc372c36762471b7dfad1c/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('MOTD_SHOWN', 'update-motd'), ('HOME', '/home/glance'), ('OLDPWD', '/home/glance/ros2_ws/src'), ('TERM_PROGRAM_VERSION', '1.141.0'), ('VSCODE_IPC_HOOK_CLI', '/run/user/1000/vscode-ipc-8406cd8b-f432-4afa-bdda-fa001643b4da.sock'), ('ROS_PYTHON_VERSION', '3'), ('VSCODE_GIT_ASKPASS_MAIN', '/home/glance/.vscode-server/bin/2a59476c9bfcb90b3ddc372c36762471b7dfad1c/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/home/glance/.vscode-server/bin/2a59476c9bfcb90b3ddc372c36762471b7dfad1c/node'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('BUNDLED_DEBUGPY_PATH', '/home/glance/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy'), ('VSCODE_PYTHON_AUTOACTIVATE_GUARD', '1'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('WSL_DISTRO_NAME', 'Ubuntu-22.04'), ('WAYLAND_DISPLAY', 'wayland-0'), ('ROS_DISTRO', 'humble'), ('LOGNAME', 'glance'), ('NAME', 'LAPTOP-DBED9HEM'), ('WSL_INTEROP', '/run/WSL/420_interop'), ('PULSE_SERVER', 'unix:/mnt/wslg/PulseServer'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('CLAUDE_CODE_SSE_PORT', '37845'), ('TERM', 'xterm-256color'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/home/glance/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:/home/glance/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:/home/glance/.vscode-server/bin/2a59476c9bfcb90b3ddc372c36762471b7dfad1c/bin/remote-cli:/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/mnt/c/Windows/system32:/mnt/c/Windows:/mnt/c/Windows/System32/Wbem:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/:/mnt/c/Windows/System32/OpenSSH/:/mnt/c/Windows/system32:/mnt/c/Program Files/NVIDIA Corporation/NVIDIA App/NvDLISR:/mnt/c/Program Files/dotnet/:/mnt/c/Program Files/Bandizip/:/mnt/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn/:/mnt/c/Program Files (x86)/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/Tools/Binn/:/mnt/c/Program Files/Microsoft SQL Server/150/DTS/Binn/:/mnt/c/Program Files (x86)/Windows Kits/8.1/Windows Performance Toolkit/:/mnt/d/Program Files/MATLAB/R2022b/runtime/win64:/mnt/d/Program Files/MATLAB/R2022b/bin:/mnt/d/Git/cmd:/mnt/d/w64devkit/bin:/mnt/c/Program Files/GitHub CLI/:/mnt/c/Program Files/nodejs/:/mnt/c/Program Files/usbipd-win/:/mnt/c/Users/glance/AppData/Local/Programs/Python/Python312:/mnt/c/Users/glance/AppData/Local/Programs/Python/Python312/Scripts:/mnt/c/Users/glance/AppData/Local/Programs/Python/Launcher/:/mnt/c/Users/glance/.local/bin:/mnt/c/Users/glance/AppData/Local/Microsoft/WindowsApps:/mnt/d/Microsoft VS Code/bin:/mnt/c/Users/glance/AppData/Roaming/npm:/mnt/c/Users/glance/AppData/Local/Programs/DockerDesktop/resources/bin:/mnt/c/Users/glance/AppData/Local/Programs/Antigravity IDE/bin:/snap/bin:/home/glance/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/scripts/noConfigScripts'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':0'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/glance/.vscode-server/extensions/ms-python.debugpy-2026.6.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-0bc354aacb6251b3.txt'), ('LANG', 'C.UTF-8'), ('PYTHONSTARTUP', '/home/glance/.vscode-server/data/User/workspaceStorage/1177d6106f5c3ba0e132b1beb0f7ef4a/ms-python.python/pythonrc.py'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-31e3e36e1c.sock'), ('TERM_PROGRAM', 'vscode'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('SHELL', '/bin/bash'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('PWD', '/home/glance/ros2_ws/build/tf2_query_demo'), ('COPILOT_DEBUG_NONCE', '1955c59c298aa31b7bb73b142bec54f5'), ('XDG_DATA_DIRS', '/usr/local/share:/usr/share:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('WSL2_GUI_APPS_ENABLED', '1'), ('HOSTTYPE', 'x86_64'), ('WSLENV', 'VSCODE_WSL_EXT_LOCATION/up'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[7.914709] (tf2_query_demo) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[7.915095] (tf2_query_demo) StdoutLine: {'line': b'-- Installing: /home/glance/ros2_ws/install/tf2_query_demo/lib/tf2_query_demo/tf_query\n'}
+[7.915334] (tf2_query_demo) StdoutLine: {'line': b'-- Set runtime path of "/home/glance/ros2_ws/install/tf2_query_demo/lib/tf2_query_demo/tf_query" to ""\n'}
+[7.915631] (tf2_query_demo) StdoutLine: {'line': b'-- Installing: /home/glance/ros2_ws/install/tf2_query_demo/share/ament_index/resource_index/package_run_dependencies/tf2_query_demo\n'}
+[7.915918] (tf2_query_demo) StdoutLine: {'line': b'-- Installing: /home/glance/ros2_ws/install/tf2_query_demo/share/ament_index/resource_index/parent_prefix_path/tf2_query_demo\n'}
+[7.916131] (tf2_query_demo) StdoutLine: {'line': b'-- Installing: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/environment/ament_prefix_path.sh\n'}
+[7.916209] (tf2_query_demo) StdoutLine: {'line': b'-- Installing: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/environment/ament_prefix_path.dsv\n'}
+[7.916279] (tf2_query_demo) StdoutLine: {'line': b'-- Installing: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/environment/path.sh\n'}
+[7.916314] (tf2_query_demo) StdoutLine: {'line': b'-- Installing: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/environment/path.dsv\n'}
+[7.916367] (tf2_query_demo) StdoutLine: {'line': b'-- Installing: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/local_setup.bash\n'}
+[7.916456] (tf2_query_demo) StdoutLine: {'line': b'-- Installing: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/local_setup.sh\n'}
+[7.916505] (tf2_query_demo) StdoutLine: {'line': b'-- Installing: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/local_setup.zsh\n'}
+[7.916537] (tf2_query_demo) StdoutLine: {'line': b'-- Installing: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/local_setup.dsv\n'}
+[7.916562] (tf2_query_demo) StdoutLine: {'line': b'-- Installing: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/package.dsv\n'}
+[7.916626] (tf2_query_demo) StdoutLine: {'line': b'-- Installing: /home/glance/ros2_ws/install/tf2_query_demo/share/ament_index/resource_index/packages/tf2_query_demo\n'}
+[7.916727] (tf2_query_demo) StdoutLine: {'line': b'-- Installing: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/cmake/tf2_query_demoConfig.cmake\n'}
+[7.916847] (tf2_query_demo) StdoutLine: {'line': b'-- Installing: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/cmake/tf2_query_demoConfig-version.cmake\n'}
+[7.916925] (tf2_query_demo) StdoutLine: {'line': b'-- Installing: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/package.xml\n'}
+[7.918402] (tf2_query_demo) CommandEnded: {'returncode': 0}
+[7.925128] (-) TimerEvent: {}
+[7.930969] (tf2_query_demo) JobEnded: {'identifier': 'tf2_query_demo', 'rc': 0}
+[7.931374] (-) EventReactorShutdown: {}

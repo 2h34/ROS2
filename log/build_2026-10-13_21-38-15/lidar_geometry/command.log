@@ -1,0 +1,4 @@
+Invoking command in '/home/glance/ros2_ws/build/lidar_geometry': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/glance/ros2_ws/install/scan_to_points:/opt/ros/humble /usr/bin/cmake --build /home/glance/ros2_ws/build/lidar_geometry -- -j20 -l20
+Invoked command in '/home/glance/ros2_ws/build/lidar_geometry' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/glance/ros2_ws/install/scan_to_points:/opt/ros/humble /usr/bin/cmake --build /home/glance/ros2_ws/build/lidar_geometry -- -j20 -l20
+Invoking command in '/home/glance/ros2_ws/build/lidar_geometry': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/glance/ros2_ws/install/scan_to_points:/opt/ros/humble /usr/bin/cmake --install /home/glance/ros2_ws/build/lidar_geometry
+Invoked command in '/home/glance/ros2_ws/build/lidar_geometry' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/glance/ros2_ws/install/scan_to_points:/opt/ros/humble /usr/bin/cmake --install /home/glance/ros2_ws/build/lidar_geometry

@@ -368,10 +368,10 @@ private:
         }
 
         //初始化ROI区域（这里人眼测定）
-        const double x_min = -0.25; //-0.25
-        const double x_max = 0.29;  // 0.29
-        const double y_min = -1.10;
-        const double y_max = -0.24;
+        const double x_min = 0.4; //-0.25
+        const double x_max = 1.6;  // 0.29
+        const double y_min = -0.80;
+        const double y_max = 0.80;
 
         std::vector<Point2D> candidate_points;
 

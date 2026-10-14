@@ -1,0 +1,22 @@
+[35m[1mConsolidate compiler generated dependencies of target tf_query[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/tf_query.dir/src/tf_query.cpp.o[0m
+[100%] [32m[1mLinking CXX executable tf_query[0m
+[100%] Built target tf_query
+-- Install configuration: ""
+-- Installing: /home/glance/ros2_ws/install/tf2_query_demo/lib/tf2_query_demo/tf_query
+-- Set runtime path of "/home/glance/ros2_ws/install/tf2_query_demo/lib/tf2_query_demo/tf_query" to ""
+-- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/ament_index/resource_index/package_run_dependencies/tf2_query_demo
+-- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/ament_index/resource_index/parent_prefix_path/tf2_query_demo
+-- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/environment/ament_prefix_path.sh
+-- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/environment/path.sh
+-- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/environment/path.dsv
+-- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/local_setup.bash
+-- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/local_setup.sh
+-- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/local_setup.zsh
+-- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/local_setup.dsv
+-- Installing: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/package.dsv
+-- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/ament_index/resource_index/packages/tf2_query_demo
+-- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/cmake/tf2_query_demoConfig.cmake
+-- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/cmake/tf2_query_demoConfig-version.cmake
+-- Up-to-date: /home/glance/ros2_ws/install/tf2_query_demo/share/tf2_query_demo/package.xml
